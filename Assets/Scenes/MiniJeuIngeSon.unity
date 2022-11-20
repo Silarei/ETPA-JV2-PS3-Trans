@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65757782}
   - component: {fileID: 65757781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Volume2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 68942951}
   - component: {fileID: 68942953}
   - component: {fileID: 68942952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SliderVolume1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108740326}
   - component: {fileID: 108740325}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Volume3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 250299237}
   - component: {fileID: 250299239}
   - component: {fileID: 250299238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SliderVolume3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 267183730}
   - component: {fileID: 267183732}
   - component: {fileID: 267183731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SliderVolume2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342044098}
   - component: {fileID: 342044097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Volume4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 632633304}
   - component: {fileID: 632633306}
   - component: {fileID: 632633305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SliderVolume4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746156742}
   - component: {fileID: 746156741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ButtonVolume4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785844120}
   - component: {fileID: 785844119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ButtonVolume3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059750313}
   - component: {fileID: 1059750312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ButtonVolume1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,7 +1249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354724728}
   - component: {fileID: 1354724727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Volume1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,7 +1343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044788537}
   - component: {fileID: 2044788536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ButtonVolume2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1514,3 +1514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1468e8c99f4b9fd4aa01a50bafb0c634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchInputMask:
+    serializedVersion: 2
+    m_Bits: 64

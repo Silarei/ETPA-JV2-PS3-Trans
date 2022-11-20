@@ -20,13 +20,13 @@ public class TouchInput : MonoBehaviour
         if (Input.GetMouseButton(0) || Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0))
         {
 
-            touchOld = new GameObject[touchList.count];
-            touchList.CopyTo(TouchesOld);
+            touchesOld = new GameObject[touchList.Count];
+            touchList.CopyTo(touchesOld);
             touchList.Clear();
 
 
 
-            Ray ray = camera.ScreenPointToRay(touch.position);
+            Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
             
 
             if  (Physics.Raycast(ray,out hit,touchInputMask))
@@ -68,14 +68,14 @@ public class TouchInput : MonoBehaviour
         if (Input.touchCount > 0)
         {
 
-            touchOld = new GameObject[touchList.count];
-            touchList.CopyTo(TouchesOld);
+            touchesOld = new GameObject[touchList.Count];
+            touchList.CopyTo(touchesOld);
             touchList.Clear();
 
             foreach (Touch touch in Input.touches)
             {
 
-                Ray ray = camera.ScreenPointToRay(touch.position);
+                Ray ray = GetComponent<Camera>().ScreenPointToRay(touch.position);
                 
 
                 if  (Physics.Raycast(ray,out hit,touchInputMask))
