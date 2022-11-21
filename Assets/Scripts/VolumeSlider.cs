@@ -5,7 +5,7 @@ using UnityEngine;
 public class VolumeSlider : MonoBehaviour
 {
     public Transform knob;
-    private Vector3 targetPos;
+    private Vector2 targetPos;
 
 
     void Start()
@@ -16,11 +16,11 @@ public class VolumeSlider : MonoBehaviour
 
     void Update()
     {
-        knob.position = Vector3.Lerp(knob.position,targetPos,Time.deltaTime * 7);
+        knob.position = Vector2.Lerp(knob.position,targetPos,Time.deltaTime * 7);
     }
 
-    void OnTouchStay(Vector3 point)
+    void OnTouchStay(Vector2 point)
     {
-        targetPos = new Vector3(point.x,targetPos.y,targetPos.z);
+        targetPos = new Vector2(targetPos.x,point.y);
     }
 }
