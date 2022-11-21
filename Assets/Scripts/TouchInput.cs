@@ -27,6 +27,7 @@ public class TouchInput : MonoBehaviour
 
 
             Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+
             
 
             if  (Physics.Raycast(ray,out hit,touchInputMask))
