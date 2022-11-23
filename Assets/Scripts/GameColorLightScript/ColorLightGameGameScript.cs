@@ -24,7 +24,6 @@ public class ColorLightGameGameScript : MonoBehaviour
     {
         if (LightPlayer.color == mySpriteRenderer.color)
         {
-            Debug.Log("Prout");
             RandomColorChange();
             score++;
             textScore.text = "" + score;

@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 492663942}
   - component: {fileID: 492663941}
   - component: {fileID: 492663940}
+  - component: {fileID: 492663944}
   m_Layer: 5
   m_Name: Blue2
   m_TagString: Untagged
@@ -331,6 +332,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 492663944}
+        m_TargetAssemblyTypeName: ButtonColorChange, Assembly-CSharp
+        m_MethodName: BlueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &492663942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +382,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492663938}
   m_CullTransparentMesh: 1
+--- !u!114 &492663944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492663938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3d7cdc7d834449a921834fb831048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589814565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1206,7 @@ GameObject:
   - component: {fileID: 1177151347}
   - component: {fileID: 1177151346}
   - component: {fileID: 1177151345}
+  - component: {fileID: 1177151349}
   m_Layer: 5
   m_Name: Red2
   m_TagString: Untagged
@@ -1277,6 +1303,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1177151349}
+        m_TargetAssemblyTypeName: ButtonColorChange, Assembly-CSharp
+        m_MethodName: RedChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1177151347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,6 +1353,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177151343}
   m_CullTransparentMesh: 1
+--- !u!114 &1177151349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177151343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3d7cdc7d834449a921834fb831048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1252366062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1886,7 @@ GameObject:
   - component: {fileID: 1712012540}
   - component: {fileID: 1712012539}
   - component: {fileID: 1712012538}
+  - component: {fileID: 1712012542}
   m_Layer: 5
   m_Name: Blue1
   m_TagString: Untagged
@@ -1932,6 +1983,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1712012542}
+        m_TargetAssemblyTypeName: ButtonColorChange, Assembly-CSharp
+        m_MethodName: BlueChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1712012540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1970,6 +2033,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712012536}
   m_CullTransparentMesh: 1
+--- !u!114 &1712012542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712012536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3d7cdc7d834449a921834fb831048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1825695737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2058,7 @@ GameObject:
   - component: {fileID: 1825695741}
   - component: {fileID: 1825695740}
   - component: {fileID: 1825695739}
+  - component: {fileID: 1825695743}
   m_Layer: 5
   m_Name: Green1
   m_TagString: Untagged
@@ -2079,6 +2155,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1825695743}
+        m_TargetAssemblyTypeName: ButtonColorChange, Assembly-CSharp
+        m_MethodName: GreenChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1825695741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,6 +2205,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825695737}
   m_CullTransparentMesh: 1
+--- !u!114 &1825695743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825695737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3d7cdc7d834449a921834fb831048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1979097022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2230,7 @@ GameObject:
   - component: {fileID: 1979097026}
   - component: {fileID: 1979097025}
   - component: {fileID: 1979097024}
+  - component: {fileID: 1979097028}
   m_Layer: 5
   m_Name: Red1
   m_TagString: Untagged
@@ -2226,6 +2327,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1979097028}
+        m_TargetAssemblyTypeName: ButtonColorChange, Assembly-CSharp
+        m_MethodName: RedChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1979097026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,6 +2377,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979097022}
   m_CullTransparentMesh: 1
+--- !u!114 &1979097028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979097022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3d7cdc7d834449a921834fb831048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2008371231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,6 +2402,7 @@ GameObject:
   - component: {fileID: 2008371235}
   - component: {fileID: 2008371234}
   - component: {fileID: 2008371233}
+  - component: {fileID: 2008371237}
   m_Layer: 5
   m_Name: Green2
   m_TagString: Untagged
@@ -2373,6 +2499,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2008371237}
+        m_TargetAssemblyTypeName: ButtonColorChange, Assembly-CSharp
+        m_MethodName: GreenChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2008371235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2411,3 +2549,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008371231}
   m_CullTransparentMesh: 1
+--- !u!114 &2008371237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008371231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade3d7cdc7d834449a921834fb831048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
