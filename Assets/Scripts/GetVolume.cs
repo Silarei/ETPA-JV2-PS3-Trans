@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class riezh : MonoBehaviour
+public class GetVolume : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class riezh : MonoBehaviour
         
     }
 
-    public void MaFonction(float monfloat)
+    public void Volume(float volume)
     {
-        Debug.Log(monfloat);
+        Debug.Log(volume);
     }
 }
