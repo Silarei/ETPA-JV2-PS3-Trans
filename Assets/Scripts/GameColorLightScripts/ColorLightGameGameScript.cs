@@ -25,6 +25,7 @@ public class ColorLightGameGameScript : MonoBehaviour
         if (LightPlayer.color == mySpriteRenderer.color)
         {
             RandomColorChange();
+            Handheld.Vibrate();
             score++;
             textScore.text = "" + score;
         }
