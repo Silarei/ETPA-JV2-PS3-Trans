@@ -7,7 +7,7 @@ public class Musiciens : MonoBehaviour
 
     public List<GameObject> artistes;
     public List<GameObject> artistesOnScene;
-    public int nbArtistesOnScene = 4;
+
     private SpriteRenderer tempoSR;
     private SpriteRenderer chanteurSR;
     
@@ -38,7 +38,7 @@ public class Musiciens : MonoBehaviour
                 tempoSR = n.GetComponent<SpriteRenderer>();
                 tempoSR.enabled = false;
                 i += 1;
-                nbArtistesOnScene -= 1;
+
 
             }
 
@@ -53,7 +53,7 @@ public class Musiciens : MonoBehaviour
                 chanteurSR = artistes[2].GetComponent<SpriteRenderer>();
                 chanteurSR.enabled = true;
                 artistesOnScene.Add(n);
-                nbArtistesOnScene += 1;
+
                 
             }
 

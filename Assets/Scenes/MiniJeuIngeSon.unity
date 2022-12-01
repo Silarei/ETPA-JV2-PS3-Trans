@@ -293,7 +293,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: VolumeGeneral
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1488,7 +1488,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1969,7 +1969,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2261,7 +2261,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2508,7 +2508,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 0
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2839,7 +2839,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0eef0a3c0e3804f99aed02523e716a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musiciens: {fileID: 0}
+  musiciens: {fileID: 2132023152}
+  volumeGeneral: {fileID: 86955331}
+  slider1: {fileID: 723114029}
+  slider1Volume: 0
+  slider2: {fileID: 680562764}
+  slider2Volume: 0
+  slider3: {fileID: 184326076}
+  slider3Volume: 0
+  slider4: {fileID: 616288622}
+  slider4Volume: 0
 --- !u!114 &2132023152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2858,4 +2867,3 @@ MonoBehaviour:
   - {fileID: 184326076}
   - {fileID: 616288622}
   artistesOnScene: []
-  nbArtistesOnScene: 4
