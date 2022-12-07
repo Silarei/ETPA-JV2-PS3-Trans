@@ -34,24 +34,28 @@ public class GamePuzzleSceneMovePiece : MonoBehaviour
     public bool bool0, bool1, bool2, bool3, bool4, bool5, bool6, bool7, bool8;
     public PieceGatherer pieceGatherer;
 
+    private bool inPlace;
     private List<PositionPiece> listPosPiece;
     private Vector2 previousPosition;
     // Start is called before the first frame update
     void Start()
     {
+        inPlace = false;
         listPosPiece = new List<PositionPiece>();
 
-        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x-1, transform.position.y+0.5f), bool0));
-        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x, transform.position.y+ 0.5f), bool1));
-        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x+1, transform.position.y+ 0.5f), bool2));
+        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x-1, transform.position.y+1f), bool0));
+        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x, transform.position.y+ 1f), bool1));
+        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x+1, transform.position.y+ 1f), bool2));
         listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x-1, transform.position.y), bool3));
         listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x, transform.position.y), bool4));
         listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x+1, transform.position.y), bool5));
-        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x-1, transform.position.y- 0.5f), bool6));
-        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x, transform.position.y- 0.5f), bool7));
-        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x+1, transform.position.y- 0.5f), bool8));
+        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x-1, transform.position.y- 1f), bool6));
+        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x, transform.position.y- 1f), bool7));
+        listPosPiece.Add(new PositionPiece(new Vector2(transform.position.x+1, transform.position.y- 1f), bool8));
 
         previousPosition = new Vector2(listPosPiece[4].GetX(), listPosPiece[4].GetY());
+
+        pieceGatherer = GameObject.Find("PieceGatherer").GetComponent<PieceGatherer>();
         
     }
 
@@ -60,15 +64,15 @@ public class GamePuzzleSceneMovePiece : MonoBehaviour
     {
         transform.position = newPos;
 
-        listPosPiece[0] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y + 0.5f), bool0));
-        listPosPiece[1] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y + 0.5f), bool1));
-        listPosPiece[2] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y + 0.5f), bool2));
+        listPosPiece[0] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y + 1f), bool0));
+        listPosPiece[1] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y + 1f), bool1));
+        listPosPiece[2] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y + 1f), bool2));
         listPosPiece[3] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y), bool3));
         listPosPiece[4] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y), bool4));
         listPosPiece[5] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y), bool5));
-        listPosPiece[6] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y - 0.5f), bool6));
-        listPosPiece[7] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y - 0.5f), bool7));
-        listPosPiece[8] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y - 0.5f), bool8));
+        listPosPiece[6] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y - 1f), bool6));
+        listPosPiece[7] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y - 1f), bool7));
+        listPosPiece[8] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y - 1f), bool8));
 
     }
 
@@ -112,17 +116,18 @@ public class GamePuzzleSceneMovePiece : MonoBehaviour
             {
                 tempoX = 1.5f;
             }
+            inPlace = true;
 
             transform.position = new Vector3(tempoX, tempoY, 0f);
-            listPosPiece[0] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y + 0.5f), bool0));
-            listPosPiece[1] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y + 0.5f), bool1));
-            listPosPiece[2] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y + 0.5f), bool2));
+            listPosPiece[0] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y + 1f), bool0));
+            listPosPiece[1] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y + 1f), bool1));
+            listPosPiece[2] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y + 1f), bool2));
             listPosPiece[3] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y), bool3));
             listPosPiece[4] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y), bool4));
             listPosPiece[5] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y), bool5));
-            listPosPiece[6] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y - 0.5f), bool6));
-            listPosPiece[7] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y - 0.5f), bool7));
-            listPosPiece[8] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y - 0.5f), bool8));
+            listPosPiece[6] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y - 1f), bool6));
+            listPosPiece[7] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y - 1f), bool7));
+            listPosPiece[8] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y - 1f), bool8));
         }
         foreach (PositionPiece item in listPosPiece)
         {
@@ -136,15 +141,14 @@ public class GamePuzzleSceneMovePiece : MonoBehaviour
         {
             foreach (PositionPiece item2 in pieceGatherer.grillePosOccupied)
             {
-                if (item.GetX() == item2.GetX() && item.GetY() == item2.GetY())
+                if (item.Used() && (item.GetX() == item2.GetX() && item.GetY() == item2.GetY()))
                 {
-                    ReturnToInitialPos();
+                    ReturnToInitialPos(); 
                     goto End;
                 }
             }
         }
-
-    End:
+        End:
         return;
         
     }
@@ -152,27 +156,31 @@ public class GamePuzzleSceneMovePiece : MonoBehaviour
     public List<PositionPiece> ReturnOccupiedPos ()
     {
         var listOccupiedPos = new List<PositionPiece>();
+        var tempList = new List<PositionPiece>();
+        tempList = null;
         foreach (PositionPiece item in listPosPiece)
         {
-            if (item.Used())
+            if (item.Used() && inPlace)
             {
                 listOccupiedPos.Add(item);
             }
         }
-        return listOccupiedPos;
+        tempList = listOccupiedPos;
+        return tempList;
     }
 
     public void ReturnToInitialPos()
     {
         transform.position = new Vector3(previousPosition.x, previousPosition.y, 0f);
-        listPosPiece[0] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y + 0.5f), bool0));
-        listPosPiece[1] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y + 0.5f), bool1));
-        listPosPiece[2] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y + 0.5f), bool2));
+        listPosPiece[0] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y + 1f), bool0));
+        listPosPiece[1] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y + 1f), bool1));
+        listPosPiece[2] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y + 1f), bool2));
         listPosPiece[3] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y), bool3));
         listPosPiece[4] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y), bool4));
         listPosPiece[5] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y), bool5));
-        listPosPiece[6] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y - 0.5f), bool6));
-        listPosPiece[7] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y - 0.5f), bool7));
-        listPosPiece[8] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y - 0.5f), bool8));
+        listPosPiece[6] = (new PositionPiece(new Vector2(transform.position.x - 1, transform.position.y - 1f), bool6));
+        listPosPiece[7] = (new PositionPiece(new Vector2(transform.position.x, transform.position.y - 1f), bool7));
+        listPosPiece[8] = (new PositionPiece(new Vector2(transform.position.x + 1, transform.position.y - 1f), bool8));
+        inPlace = false;
     }
 }

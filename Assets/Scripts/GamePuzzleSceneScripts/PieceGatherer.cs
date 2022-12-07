@@ -16,8 +16,6 @@ public class PieceGatherer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
         if (Input.touchCount >= 1)
         {
             var tempPosition = Input.touches[0].position;
@@ -33,9 +31,17 @@ public class PieceGatherer : MonoBehaviour
                     tempoGrillePos = currentHittedPiece.ReturnOccupiedPos();
                     foreach (GamePuzzleSceneMovePiece.PositionPiece item in tempoGrillePos)
                     {
-                        grillePosOccupied.Remove(item);
+                        foreach (GamePuzzleSceneMovePiece.PositionPiece item2 in grillePosOccupied)
+                        {
+                            if (item == item2)
+                            {
+                                Debug.Log(item2.GetX() + " " + item2.GetY());
+                                grillePosOccupied.Remove(item2);
+                                break;
+                            }
+                        }
+                        
                     }
-
                 }
             }
 
@@ -58,7 +64,5 @@ public class PieceGatherer : MonoBehaviour
                 currentHittedPiece = null;
             }
         }
-        
-
     }
 }
