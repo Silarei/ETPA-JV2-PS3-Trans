@@ -284,7 +284,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 211390578}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 200
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -293,7 +293,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: VolumeGeneral
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -472,9 +472,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.56056947, b: 0.07843137, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 5ebb11e70c278fa41af1518c08181163, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -492,8 +492,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184326076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.474, y: 1.16, z: 0}
-  m_LocalScale: {x: 0.4875, y: 1, z: 1}
+  m_LocalPosition: {x: 0.37, y: 1.16, z: 0}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.13379}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -868,9 +868,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.15065895, b: 0.08018869, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 5e59b4809d9d38b4ba114a9b34f26f0c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -888,8 +888,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616288622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.499, y: 1.16, z: 0}
-  m_LocalScale: {x: 0.4875, y: 1, z: 1}
+  m_LocalPosition: {x: 1.623, y: 1.145, z: 0}
+  m_LocalScale: {x: 0.11, y: 0.11, z: 0.15710534}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -952,9 +952,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.36271316, g: 1, b: 0.07843137, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 19ff4fea8732f9748a82dd4294e48013, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -972,8 +972,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680562764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.543, y: 1.16, z: 0}
-  m_LocalScale: {x: 0.4875, y: 1, z: 1}
+  m_LocalPosition: {x: -0.485, y: 1.247, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.16031}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1186,9 +1186,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.07843137, g: 0.46680176, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 420dce6f7e9409d4ea050ffdec9146cf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1207,7 +1207,7 @@ Transform:
   m_GameObject: {fileID: 723114029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.561, y: 1.16, z: 0}
-  m_LocalScale: {x: 0.4875, y: 1, z: 1}
+  m_LocalScale: {x: 0.11, y: 0.11, z: 0.051059023}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1488,7 +1488,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1969,7 +1969,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2261,7 +2261,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2508,7 +2508,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2132023151}
         m_TargetAssemblyTypeName: GetVolume, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2840,15 +2840,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musiciens: {fileID: 2132023152}
-  volumeGeneral: {fileID: 86955331}
+  generalValue: {fileID: 86955333}
   slider1: {fileID: 723114029}
-  slider1Volume: 0
+  slider1Value: {fileID: 898242487}
   slider2: {fileID: 680562764}
-  slider2Volume: 0
+  slider2Value: {fileID: 1544868065}
   slider3: {fileID: 184326076}
-  slider3Volume: 0
+  slider3Value: {fileID: 1355942760}
   slider4: {fileID: 616288622}
-  slider4Volume: 0
+  slider4Value: {fileID: 1770172107}
 --- !u!114 &2132023152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2867,3 +2867,9 @@ MonoBehaviour:
   - {fileID: 184326076}
   - {fileID: 616288622}
   artistesOnScene: []
+  sliders:
+  - {fileID: 898242485}
+  - {fileID: 1544868063}
+  - {fileID: 1355942758}
+  - {fileID: 1770172105}
+  slidersActive: []
