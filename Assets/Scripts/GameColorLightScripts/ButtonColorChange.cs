@@ -24,12 +24,12 @@ public class ButtonColorChange : MonoBehaviour
     {
         if (!activated)
         {
-            buttonGoingToChange.color = Color.red;
+            buttonGoingToChange.color = new Color(1f, 0f, 0f, 1f);
             activated = true;
         }
         else
         {
-            buttonGoingToChange.color = Color.white;
+            buttonGoingToChange.color = new Color(0.5f, 0.2f, 0.2f, 1f);
             activated = false;
         }
     }
@@ -38,12 +38,12 @@ public class ButtonColorChange : MonoBehaviour
     {
         if (!activated)
         {
-            buttonGoingToChange.color = Color.blue;
+            buttonGoingToChange.color = new Color(0f, 0f, 1f, 1f);
             activated = true;
         }
         else
         {
-            buttonGoingToChange.color = Color.white;
+            buttonGoingToChange.color = new Color(0.2f, 0.2f, 0.5f, 1f);
             activated = false;
         }
     }
@@ -52,12 +52,12 @@ public class ButtonColorChange : MonoBehaviour
     {
         if (!activated)
         {
-            buttonGoingToChange.color = Color.green;
+            buttonGoingToChange.color = new Color(0f, 1f, 0f, 1f);
             activated = true;
         }
         else
         {
-            buttonGoingToChange.color = Color.white;
+            buttonGoingToChange.color = new Color(0.2f, 0.5f, 0.2f, 1f);
             activated = false;
         }
     }

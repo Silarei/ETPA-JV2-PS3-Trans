@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1ab5ecc7360b18b49bcc68020748ee4e
@@ -17,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameColorLight.unity
     guid: a0af0933e4c7e4d4a9d58fb75f997439
+  - enabled: 1
+    path: Assets/Scenes/GamePuzzleScene.unity
+    guid: c648b4ff9e1f5e64a94bec605d1d55b1
   - enabled: 1
     path: Assets/Scenes/MiniJeuIngeSon.unity
     guid: 96fe1d4577396af40ba2c3c68dfacc33
