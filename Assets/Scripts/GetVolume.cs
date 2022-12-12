@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GetVolume : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GetVolume : MonoBehaviour
     private List<GameObject> artistesOnScene;
     public List<Slider> slidersActive;
 
+    public TMP_Text textScore;
+
     public bool win = false;
     public int score = 0;
     public bool slidersList = false;
@@ -25,6 +28,7 @@ public class GetVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         artistesOnScene = musiciens.artistesOnScene;
     }
 
@@ -226,6 +230,23 @@ public class GetVolume : MonoBehaviour
                 win = true;
 
             }
+        }
+        if (win)
+        {
+            score++;
+            textScore.text = "" + score;
+            win = false;
+            slidersList = false;
+            slidersActive.Clear();
+            artistesOnScene.Clear();
+            musiciens.NbArtistes();
+            generalValue.value = 0;
+            slider1Value.value = 0;
+            slider2Value.value = 0;
+            slider3Value.value = 0;
+            slider4Value.value = 0;
+            
+ 
         }
 
         
