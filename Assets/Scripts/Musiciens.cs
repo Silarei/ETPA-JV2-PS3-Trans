@@ -8,7 +8,7 @@ public class Musiciens : MonoBehaviour
     public List<GameObject> artistes;
     public List<GameObject> artistesOnScene;
     public List<GameObject> sliders;
-    public List<GameObject> slidersActive;
+    
 
     private SpriteRenderer tempoSR;
     private SpriteRenderer chanteurSR;
@@ -39,8 +39,6 @@ public class Musiciens : MonoBehaviour
             {
                 tempoSR = n.GetComponent<SpriteRenderer>();
                 tempoSR.enabled = false;
-                /*int sliderPosition = sliders.IndexOf(n);
-                sliders[sliderPosition].isStatic = true;*/
                 i += 1;
 
 
@@ -57,32 +55,12 @@ public class Musiciens : MonoBehaviour
                 chanteurSR = artistes[2].GetComponent<SpriteRenderer>();
                 chanteurSR.enabled = true;
                 artistesOnScene.Add(n);
-                //sliders[4].isStatic = false;
 
-                
             }
 
         }
         Debug.Log("Il y a " + artistesOnScene.Count + " artistes sur scène");
 
-        /*foreach (GameObject n in sliders)
-        {
-            int artistePosition = artistesOnScene.IndexOf(n);
-            if (artistesOnScene[artistePosition])
-            {
-            
 
-
-            }
-
-            else
-            {
-                slidersActive.Add(n);
-
-            }
-
-
-        }
-        Debug.Log("Il y a " + slidersActive.Count + " slider.s actif.s");*/
     }
 }

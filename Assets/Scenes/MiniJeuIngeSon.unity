@@ -2849,6 +2849,10 @@ MonoBehaviour:
   slider3Value: {fileID: 1355942760}
   slider4: {fileID: 616288622}
   slider4Value: {fileID: 1770172107}
+  slidersActive: []
+  win: 0
+  score: 0
+  slidersList: 0
 --- !u!114 &2132023152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2872,4 +2876,3 @@ MonoBehaviour:
   - {fileID: 1544868063}
   - {fileID: 1355942758}
   - {fileID: 1770172105}
-  slidersActive: []
