@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class ButtonColorChange : MonoBehaviour
 {
-    private bool activated;
+    public bool activated;
     private Image buttonGoingToChange;
+    public ButtonColorChange otherButton;
+    public float red, green, blue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,44 +23,36 @@ public class ButtonColorChange : MonoBehaviour
         
     }
 
-    public void RedChange()
+    public void Change()
     {
-        if (!activated)
+        if (otherButton != null)
         {
-            buttonGoingToChange.color = new Color(1f, 0f, 0f, 1f);
+            if (!activated && otherButton.activated)
+            {
+                buttonGoingToChange.color = new Color(red, green, blue, 1f);
+                activated = true;
+                otherButton.buttonGoingToChange.color = new Color(0.6f, 0.6f, 0.6f, 1f);
+                otherButton.activated = false;
+            }
+            else if (!activated)
+            {
+                buttonGoingToChange.color = new Color(red, green, blue, 1f);
+                activated = true;
+            }
+            else
+            {
+                buttonGoingToChange.color = new Color(0.6f, 0.6f, 0.6f, 1f);
+                activated = false;
+            }
+        }
+        else if (!activated)
+        {
+            buttonGoingToChange.color = new Color(red, green, blue, 1f);
             activated = true;
         }
         else
         {
-            buttonGoingToChange.color = new Color(0.5f, 0.2f, 0.2f, 1f);
-            activated = false;
-        }
-    }
-
-    public void BlueChange()
-    {
-        if (!activated)
-        {
-            buttonGoingToChange.color = new Color(0f, 0f, 1f, 1f);
-            activated = true;
-        }
-        else
-        {
-            buttonGoingToChange.color = new Color(0.2f, 0.2f, 0.5f, 1f);
-            activated = false;
-        }
-    }
-
-    public void GreenChange()
-    {
-        if (!activated)
-        {
-            buttonGoingToChange.color = new Color(0f, 1f, 0f, 1f);
-            activated = true;
-        }
-        else
-        {
-            buttonGoingToChange.color = new Color(0.2f, 0.5f, 0.2f, 1f);
+            buttonGoingToChange.color = new Color(red / 2, green / 2, blue / 2, 1f);
             activated = false;
         }
     }
