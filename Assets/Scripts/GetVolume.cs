@@ -88,7 +88,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 15 && slidersActive[0].value < 35 && slidersActive[1].value > 15 && slidersActive[1].value < 35 && slidersActive[2].value > 15 && slidersActive[2].value < 35 && slidersActive[3].value > 15 && slidersActive[3].value < 35)
             {
-                Debug.Log("gagné");
+                Debug.Log("gagne");
                 win = true;
 
             }
@@ -138,7 +138,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 20 && slidersActive[0].value < 40 && slidersActive[1].value > 20 && slidersActive[1].value < 40 && slidersActive[2].value > 20 && slidersActive[2].value < 40)
             {
-                Debug.Log("gagné");
+                Debug.Log("gagne");
                 win = true;
 
             }
@@ -189,7 +189,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 40 && slidersActive[0].value < 60 && slidersActive[1].value > 40 && slidersActive[1].value < 60)
             {
-                Debug.Log("gagné");
+                Debug.Log("gagne");
                 win = true;
 
             }
@@ -239,7 +239,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110)
             {
-                Debug.Log("gagné");
+                Debug.Log("gagne");
                 win = true;
 
             }
