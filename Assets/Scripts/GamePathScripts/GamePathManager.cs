@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GamePathManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GamePathManager : MonoBehaviour
     public TMP_Text instruction;
     public SpriteRenderer cross;
     public SpriteRenderer check;
+    public TMP_Text textScore;
+    public TMP_Text time;
+    public GameObject panneauFin;
 
     private bool drawing;
     private int indexLine;
@@ -18,6 +22,7 @@ public class GamePathManager : MonoBehaviour
     private SpriteRenderer point2;
     private bool point1Check;
     private bool point2Check;
+    private bool end;
 
     private float currentTime;
     private float timer;
@@ -54,6 +59,21 @@ public class GamePathManager : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+
+        if (currentTime > 60 && !end)
+        {
+            end = true;
+            Instantiate(panneauFin);
+        }
+        else if (!end)
+        {
+            time.text = "" + System.Math.Round((60 - currentTime), 0);
+        }
+        if (currentTime > 70)
+        {
+            SceneManager.LoadScene("MenuFreeGame");
+        }
+
         if (Input.touchCount >= 1 && !error && !win)
         {
             var tempPosition = Input.touches[0].position;
@@ -112,6 +132,8 @@ public class GamePathManager : MonoBehaviour
         {
             var randPoint = Random.Range(0.51f, 6.5f);
             point1 = gameObjectList[Mathf.RoundToInt(randPoint)];
+            randPoint = Random.Range(0.51f, 6.5f);
+            point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
             while (point1 == point2 || point2 == null)
             {
                 randPoint = Random.Range(0.51f, 6.5f);
@@ -123,6 +145,7 @@ public class GamePathManager : MonoBehaviour
 
             instruction.SetText("Aller de " + point1.name + " à " + point2.name);
             score++;
+            textScore.text = "" + score;
             win = true;
             timer = currentTime;
             currentHittedPiece = null;

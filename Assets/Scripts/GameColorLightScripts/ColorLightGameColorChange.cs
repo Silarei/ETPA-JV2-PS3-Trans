@@ -5,78 +5,79 @@ using UnityEngine;
 
 public class ColorLightGameColorChange : MonoBehaviour
 {
-    public bool red1, red2, blue1, blue2, green1, green2 = false;
+    public bool red1, blue1, green1, intensityLow, intensityHigh = false;
 
-    public GameObject redSpot1, redSpot2, greenSpot1, greenSpot2, blueSpot1, blueSpot2;
-
-    private SpriteRenderer redSpot1SR, redSpot2SR, greenSpot1SR, greenSpot2SR, blueSpot1SR, blueSpot2SR;
+    public SpriteRenderer redSpot2SR, greenSpot2SR, blueSpot2SR;
     private float red, green, blue, transparency = 0;
     private SpriteRenderer mySpriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        redSpot1SR = redSpot1.GetComponent<SpriteRenderer>();
-        redSpot2SR = redSpot2.GetComponent<SpriteRenderer>();
-        greenSpot1SR = greenSpot1.GetComponent<SpriteRenderer>();
-        greenSpot2SR = greenSpot2.GetComponent<SpriteRenderer>();
-        blueSpot1SR = blueSpot1.GetComponent<SpriteRenderer>();
-        blueSpot2SR = blueSpot2.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (red1 || red2)
+        if (red1)
         {
             red = 0.5f;
-            redSpot1SR.color = new Color(1f, 1f, 1f, 1f);
-            redSpot2SR.color = new Color(1f, 1f, 1f, 0f);
-            if (red1 && red2)
+            redSpot2SR.color = new Color(1f, 1f, 1f, 0.8f);
+            if (intensityHigh)
             {
-                red = 1f;
+                red = 0.8f;
                 redSpot2SR.color = new Color(1f, 1f, 1f, 1f);
+            }
+            if (intensityLow)
+            {
+                red = 0.2f;
+                redSpot2SR.color = new Color(1f, 1f, 1f, 0.6f);
             }
         }
         else { 
             red = 0f;
-            redSpot1SR.color = new Color(1f, 1f, 1f, 0f);
             redSpot2SR.color = new Color(1f, 1f, 1f, 0f);
         }
 
-        if (green1 || green2)
+        if (green1)
         {
-            green = 0.5f; 
-            greenSpot1SR.color = new Color(1f, 1f, 1f, 1f);
-            greenSpot2SR.color = new Color(1f, 1f, 1f, 0f);
-            if (green1 && green2)
+            green = 0.5f;
+            greenSpot2SR.color = new Color(1f, 1f, 1f, 0.8f);
+            if (intensityHigh)
             {
-                green = 1f;
+                green = 0.8f;
                 greenSpot2SR.color = new Color(1f, 1f, 1f, 1f);
+            }
+            if (intensityLow)
+            {
+                green = 0.2f;
+                greenSpot2SR.color = new Color(1f, 1f, 1f, 0.6f);
             }
         }
         else
         {
             green = 0f;
-            greenSpot1SR.color = new Color(1f, 1f, 1f, 0f);
             greenSpot2SR.color = new Color(1f, 1f, 1f, 0f);
         }
 
-        if (blue1 || blue2)
+        if (blue1)
         {
             blue = 0.5f;
-            blueSpot1SR.color = new Color(1f, 1f, 1f, 1f);
-            blueSpot2SR.color = new Color(1f, 1f, 1f, 0f);
-            if (blue1 && blue2)
+            blueSpot2SR.color = new Color(1f, 1f, 1f, 0.8f);
+            if (intensityHigh)
             {
-                blue = 1f;
+                blue = 0.8f;
                 blueSpot2SR.color = new Color(1f, 1f, 1f, 1f);
+            }
+            if (intensityLow)
+            {
+                blue = 0.2f;
+                blueSpot2SR.color = new Color(1f, 1f, 1f, 0.6f);
             }
         }
         else
         {
             blue = 0f;
-            blueSpot1SR.color = new Color(1f, 1f, 1f, 0f);
             blueSpot2SR.color = new Color(1f, 1f, 1f, 0f);
         }
 
@@ -104,18 +105,6 @@ public class ColorLightGameColorChange : MonoBehaviour
         }
     }
 
-    public void Red2Switch()
-    {
-        if (red2)
-        {
-            red2 = false;
-        }
-        else
-        {
-            red2 = true;
-        }
-    }
-
     public void Blue1Switch()
     {
         if (blue1)
@@ -125,18 +114,6 @@ public class ColorLightGameColorChange : MonoBehaviour
         else
         {
             blue1 = true;
-        }
-    }
-
-    public void Blue2Switch()
-    {
-        if (blue2)
-        {
-            blue2 = false;
-        }
-        else
-        {
-            blue2 = true;
         }
     }
 
@@ -152,15 +129,28 @@ public class ColorLightGameColorChange : MonoBehaviour
         }
     }
 
-    public void Green2Switch()
+    public void IntensityHighSwitch()
     {
-        if (green2)
+        if (intensityHigh)
         {
-            green2 = false;
+            intensityHigh = false;
         }
         else
         {
-            green2 = true;
+            intensityHigh = true;
+            intensityLow = false;
+        }
+    }
+    public void IntensityLowSwitch()
+    {
+        if (intensityLow)
+        {
+            intensityLow = false;
+        }
+        else
+        {
+            intensityLow = true;
+            intensityHigh = false;
         }
     }
 
