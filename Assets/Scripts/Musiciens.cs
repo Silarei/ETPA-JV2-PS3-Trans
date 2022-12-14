@@ -62,7 +62,7 @@ public class Musiciens : MonoBehaviour
             }
 
         }
-        Debug.Log("Il y a " + artistesOnScene.Count + " artistes sur scène");
+
         
 
 
