@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb831eeabb4b234880db78494504a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MenuJeuIngeSon
+  sceneToLoad: MiniJeuIngeSon
 --- !u!61 &445025333
 BoxCollider2D:
   m_ObjectHideFlags: 0
