@@ -7,6 +7,14 @@ using TMPro;
 public class GetVolume : MonoBehaviour
 {
     public Musiciens musiciens;
+    public GameObject spotBleu;
+    public bool bleuOn = false;
+    public GameObject spotRouge;
+    public bool rougeOn = false;
+    public GameObject spotVert;
+    public bool vertOn = false;
+
+
     public Slider generalValue;
     public GameObject slider1;
     public Slider slider1Value;
@@ -28,6 +36,10 @@ public class GetVolume : MonoBehaviour
     private SpriteRenderer pianisteSR;
     private SpriteRenderer batteurSR;
     private SpriteRenderer guitaristeSR;
+    public SpriteRenderer spotBleuSR;
+    public SpriteRenderer spotRougeSR;
+    public SpriteRenderer spotVertSR;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +50,17 @@ public class GetVolume : MonoBehaviour
         batteurSR = musiciens.artistes[1].GetComponent<SpriteRenderer>();
         chanteurSR = musiciens.artistes[2].GetComponent<SpriteRenderer>();
         guitaristeSR = musiciens.artistes[3].GetComponent<SpriteRenderer>();
+        spotBleuSR = spotBleu.GetComponent<SpriteRenderer>();
+        spotRougeSR = spotRouge.GetComponent<SpriteRenderer>();
+        spotVertSR = spotVert.GetComponent<SpriteRenderer>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (artistesOnScene.Count == 4)
         {
             generalValue.value = 0;
@@ -88,7 +105,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 15 && slidersActive[0].value < 35 && slidersActive[1].value > 15 && slidersActive[1].value < 35 && slidersActive[2].value > 15 && slidersActive[2].value < 35 && slidersActive[3].value > 15 && slidersActive[3].value < 35)
             {
-                Debug.Log("gagne");
+
                 win = true;
 
             }
@@ -138,7 +155,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 20 && slidersActive[0].value < 40 && slidersActive[1].value > 20 && slidersActive[1].value < 40 && slidersActive[2].value > 20 && slidersActive[2].value < 40)
             {
-                Debug.Log("gagne");
+
                 win = true;
 
             }
@@ -189,7 +206,7 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 40 && slidersActive[0].value < 60 && slidersActive[1].value > 40 && slidersActive[1].value < 60)
             {
-                Debug.Log("gagne");
+
                 win = true;
 
             }
@@ -239,7 +256,6 @@ public class GetVolume : MonoBehaviour
 
             if (generalValue.value > 90 && generalValue.value < 110)
             {
-                Debug.Log("gagne");
                 win = true;
 
             }
@@ -248,6 +264,7 @@ public class GetVolume : MonoBehaviour
         {
             score++;
             textScore.text = "" + score;
+            StartCoroutine(SpotLight());
             win = false;
             slidersList = false;
             slidersActive.Clear();
@@ -273,12 +290,26 @@ public class GetVolume : MonoBehaviour
 
     public void Volume(float volume)
     {
-        Debug.Log(volume);
+        
     }
 
     public void VolumeGeneral(float volumeGeneral)
     {
-        Debug.Log(volumeGeneral);
+        
 
     }
+
+    public IEnumerator SpotLight()
+    {
+        spotRougeSR.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        spotRougeSR.enabled = false;
+        spotBleuSR.enabled = true;
+        spotVertSR.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        spotBleuSR.enabled = false;
+        spotVertSR.enabled = false;
+
+    }
+    
 }
