@@ -15,6 +15,8 @@ public class SaveSerial : MonoBehaviour
     public bool isMediumModeCompleted;
     public bool isHardModeCompleted;
     public bool isHardcoreModeCompleted;
+    public bool isItChallengeMode;
+
 
     public void SaveData()
     {
@@ -43,6 +45,7 @@ public class SaveSerial : MonoBehaviour
             FileStream file =
                        File.Open(Application.persistentDataPath
                        + "/MySaveData.dat", FileMode.Open);
+            file.Position = 0;
             DataSaved data = (DataSaved)bf.Deserialize(file);
             file.Close();
             isGame2Unlocked = data.isGame2Unlocked;
@@ -60,6 +63,7 @@ public class SaveSerial : MonoBehaviour
     }
 }
 
+[Serializable]
 class DataSaved
 {
     public bool isGame2Unlocked;

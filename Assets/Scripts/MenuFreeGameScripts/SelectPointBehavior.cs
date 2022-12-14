@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class SelectPointBehavior : MonoBehaviour
 {
     public string sceneToLoad;
+    public bool unlocked;
+    public bool challenge;
+    public SaveSerial saveSerial;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,17 @@ public class SelectPointBehavior : MonoBehaviour
 
     public void LoadGame () 
     {
-        SceneManager.LoadScene(sceneToLoad);
+        if (unlocked)
+        {
+            if (challenge)
+            {
+                saveSerial.isItChallengeMode = true;
+            }
+            else
+            {
+                saveSerial.isItChallengeMode = false;
+            }
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
 }
