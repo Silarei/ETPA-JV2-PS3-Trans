@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniJeuIngeSon.unity
     guid: 96fe1d4577396af40ba2c3c68dfacc33
+  - enabled: 1
+    path: Assets/Scenes/GamePath.unity
+    guid: d1865cbb7f2ec5e49b93da86053d9eee
   m_configObjects: {}
