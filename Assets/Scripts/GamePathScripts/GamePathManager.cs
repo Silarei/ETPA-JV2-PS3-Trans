@@ -104,6 +104,9 @@ public class GamePathManager : MonoBehaviour
             theLine.positionCount = 0;
             indexLine = 0;
             drawing = false;
+            currentHittedPiece = null;
+            point1Check = false;
+            point2Check = false;
         }
 
         if (currentHittedPiece != null && currentHittedPiece != gameObjectList[0] && !win && !error)
