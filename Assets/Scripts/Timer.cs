@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         panneauSR = panneauFin.GetComponent<SpriteRenderer>();
+        saveSerial.LoadData();
     }
 
     // Update is called once per frame
@@ -41,7 +42,25 @@ public class Timer : MonoBehaviour
         {
             if (saveSerial.isItChallengeMode)
             {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (getVolume.score > 15)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
 
+                saveSerial.atWhichGameAreWe++;
+                saveSerial.SaveData();
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count) 
+                { 
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else 
+                { 
+                    SceneManager.LoadScene("MenuChallenge");
+                }
             }
             else
             {

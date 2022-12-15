@@ -17,7 +17,10 @@ public class SaveSerial : MonoBehaviour
     public bool isHardModeCompleted;
     public bool isHardcoreModeCompleted;
     public bool isItChallengeMode;
-
+    public List<string> orderListMiniGame;
+    public int atWhichGameAreWe;
+    public string difficulty;
+    public List<bool> success;
 
     public void SaveData()
     {
@@ -34,6 +37,11 @@ public class SaveSerial : MonoBehaviour
         data.isMediumModeCompleted = isMediumModeCompleted;
         data.isHardModeCompleted = isHardModeCompleted;
         data.isHardcoreModeCompleted = isHardcoreModeCompleted;
+        data.isItChallengeMode = isItChallengeMode;
+        data.orderListMiniGame = orderListMiniGame;
+        data.atWhichGameAreWe = atWhichGameAreWe;
+        data.difficulty = difficulty;
+        data.success = success;
         bf.Serialize(file, data);
         file.Close();
     }
@@ -59,6 +67,11 @@ public class SaveSerial : MonoBehaviour
             isMediumModeCompleted = data.isMediumModeCompleted;
             isHardModeCompleted = data.isHardModeCompleted;
             isHardcoreModeCompleted = data.isHardcoreModeCompleted;
+            isItChallengeMode = data.isItChallengeMode;
+            orderListMiniGame = data.orderListMiniGame;
+            atWhichGameAreWe = data.atWhichGameAreWe;
+            difficulty = data.difficulty;
+            success = data.success;
             Debug.Log("Game data loaded!");
         }
         else
@@ -78,4 +91,9 @@ class DataSaved
     public bool isMediumModeCompleted;
     public bool isHardModeCompleted;
     public bool isHardcoreModeCompleted;
+    public bool isItChallengeMode;
+    public List<string> orderListMiniGame;
+    public int atWhichGameAreWe;
+    public string difficulty;
+    public List<bool> success;
 }

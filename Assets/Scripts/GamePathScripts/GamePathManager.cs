@@ -34,6 +34,7 @@ public class GamePathManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        saveSerial.LoadData();
         cross.color = new Color(1, 1, 1, 0);
         check.color = new Color(1, 1, 1, 0);
         error = false;
@@ -53,7 +54,7 @@ public class GamePathManager : MonoBehaviour
         point1Check = false;
         point2Check = false;
 
-        instruction.SetText("Aller de " + point1.name + " � " + point2.name);
+        instruction.SetText("Aller de " + point1.name + " a " + point2.name);
     }
 
     // Update is called once per frame
@@ -74,7 +75,24 @@ public class GamePathManager : MonoBehaviour
         {
             if (saveSerial.isItChallengeMode)
             {
-
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (currentTime < 50)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                saveSerial.atWhichGameAreWe++; 
+                saveSerial.SaveData(); 
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
+                {
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else
+                {
+                    SceneManager.LoadScene("MenuChallenge");
+                }
             }
             else
             {

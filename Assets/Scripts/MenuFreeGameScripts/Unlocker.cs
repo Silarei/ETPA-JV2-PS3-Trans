@@ -52,6 +52,18 @@ public class Unlocker : MonoBehaviour
             }
             else if (item.name == "")
             {
+                if (saveSerial.isGame5Unlocked)
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 1f);
+                    bruhDah.unlocked = true;
+                }
+                else
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 0.4f);
+                }
+            }
+            else if (item.name == "ButtonChallenge")
+            {
                 if (saveSerial.isChallengeUnlocked)
                 {
                     bruh.color = new Color(1f, 1f, 1f, 1f);
@@ -62,37 +74,40 @@ public class Unlocker : MonoBehaviour
                     bruh.color = new Color(1f, 1f, 1f, 0.4f);
                 }
             }
-            else if (item.name == "")
+            else if (item.name == "ButtonMoyen")
             {
                 if (saveSerial.isEasyModeCompleted)
                 {
                     bruh.color = new Color(1f, 1f, 1f, 1f);
+                    bruhDah.unlocked = true;
                 }
                 else
                 {
-                    bruh.color = new Color(1f, 1f, 1f, 0.4f);
+                    bruh.color = new Color(1f, 1f, 1f, 0.2f);
                 }
             }
-            else if (item.name == "")
+            else if (item.name == "ButtonDifficile")
             {
                 if (saveSerial.isMediumModeCompleted)
                 {
                     bruh.color = new Color(1f, 1f, 1f, 1f);
+                    bruhDah.unlocked = true;
                 }
                 else
                 {
-                    bruh.color = new Color(1f, 1f, 1f, 0.4f);
+                    bruh.color = new Color(1f, 1f, 1f, 0.2f);
                 }
             }
-            else if (item.name == "")
+            else if (item.name == "ButtonOrganisateur")
             {
                 if (saveSerial.isHardModeCompleted)
                 {
                     bruh.color = new Color(1f, 1f, 1f, 1f);
+                    bruhDah.unlocked = true;
                 }
                 else
                 {
-                    bruh.color = new Color(1f, 1f, 1f, 0.4f);
+                    bruh.color = new Color(1f, 1f, 1f, 0.2f);
                 }
             }
             else if (item.name == "")

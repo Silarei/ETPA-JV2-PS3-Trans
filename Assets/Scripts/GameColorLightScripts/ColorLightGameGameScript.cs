@@ -47,7 +47,24 @@ public class ColorLightGameGameScript : MonoBehaviour
         {
             if (saveSerial.isItChallengeMode)
             {
-
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (score > 10)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                saveSerial.atWhichGameAreWe++;
+                saveSerial.SaveData();
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
+                {
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else
+                {
+                    SceneManager.LoadScene("MenuChallenge");
+                }
             }
             else
             {

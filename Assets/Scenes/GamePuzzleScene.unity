@@ -155,11 +155,17 @@ MonoBehaviour:
   isGame2Unlocked: 0
   isGame3Unlocked: 0
   isGame4Unlocked: 0
+  isGame5Unlocked: 0
   isChallengeUnlocked: 0
   isEasyModeCompleted: 0
   isMediumModeCompleted: 0
   isHardModeCompleted: 0
   isHardcoreModeCompleted: 0
+  isItChallengeMode: 0
+  orderListMiniGame: []
+  atWhichGameAreWe: 0
+  difficulty: 
+  success: 
 --- !u!4 &275996789
 Transform:
   m_ObjectHideFlags: 0
@@ -320,6 +326,7 @@ MonoBehaviour:
   pieceGatherer: {fileID: 989328732}
   currentTime: 0
   timer: {fileID: 1333223938}
+  saveSerial: {fileID: 275996788}
   saxoPiece: {fileID: 2005675477564868483, guid: 5db432b6c0a9e254295bd7a65ad960a4, type: 3}
   pianoPiece: {fileID: 7635777667955935265, guid: 3af49f6db568fcc42bd623a069cfdce0, type: 3}
   microPiece: {fileID: 4758539284467963071, guid: b8d6044d2f561a44989a56fcde8e3019, type: 3}
