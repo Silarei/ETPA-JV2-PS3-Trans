@@ -3401,6 +3401,7 @@ MonoBehaviour:
   isMediumModeCompleted: 0
   isHardModeCompleted: 0
   isHardcoreModeCompleted: 0
+  isItChallengeMode: 0
 --- !u!4 &2113516374
 Transform:
   m_ObjectHideFlags: 0
@@ -3578,4 +3579,6 @@ MonoBehaviour:
   currentTime: 0
   panneauFin: {fileID: 762804428}
   panneauSR: {fileID: 762804429}
+  saveSerial: {fileID: 2113516373}
+  getVolume: {fileID: 2132023151}
   gameOver: 0

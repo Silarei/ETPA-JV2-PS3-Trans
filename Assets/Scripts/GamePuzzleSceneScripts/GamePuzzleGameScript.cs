@@ -11,6 +11,7 @@ public class GamePuzzleGameScript : MonoBehaviour
     public float currentTime;
     public TMP_Text timer;
     private float end;
+    public SaveSerial saveSerial;
 
     public GameObject saxoPiece;
     public GameObject pianoPiece;
@@ -67,12 +68,23 @@ public class GamePuzzleGameScript : MonoBehaviour
         if (pieceGatherer.grillePosOccupied.Count == 16 && !victory)
         {
             end = currentTime;
-            Debug.Log("Victoire !");
             victory = true;
         }
         if (currentTime - end > 10 && victory)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+
+            }
+            else
+            {
+                if (currentTime < 50)
+                {
+                    saveSerial.isGame4Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
     }
 }

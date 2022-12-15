@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public float currentTime;
     public GameObject panneauFin;
     public SpriteRenderer panneauSR;
+    public SaveSerial saveSerial;
+    public GetVolume getVolume;
 
     public bool gameOver = false;
 
@@ -37,7 +39,19 @@ public class Timer : MonoBehaviour
 
         if (currentTime > 65)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+
+            }
+            else
+            {
+                if (getVolume.score > 15)
+                {
+                    saveSerial.isGame3Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
     }
 }

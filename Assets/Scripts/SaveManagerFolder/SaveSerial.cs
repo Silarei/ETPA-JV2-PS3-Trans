@@ -10,6 +10,7 @@ public class SaveSerial : MonoBehaviour
     public bool isGame2Unlocked;
     public bool isGame3Unlocked;
     public bool isGame4Unlocked;
+    public bool isGame5Unlocked;
     public bool isChallengeUnlocked;
     public bool isEasyModeCompleted;
     public bool isMediumModeCompleted;
@@ -27,6 +28,7 @@ public class SaveSerial : MonoBehaviour
         data.isGame2Unlocked = isGame2Unlocked;
         data.isGame3Unlocked = isGame3Unlocked;
         data.isGame4Unlocked = isGame4Unlocked;
+        data.isGame5Unlocked = isGame5Unlocked;
         data.isChallengeUnlocked = isChallengeUnlocked;
         data.isEasyModeCompleted = isEasyModeCompleted;
         data.isMediumModeCompleted = isMediumModeCompleted;
@@ -51,6 +53,7 @@ public class SaveSerial : MonoBehaviour
             isGame2Unlocked = data.isGame2Unlocked;
             isGame3Unlocked = data.isGame3Unlocked;
             isGame4Unlocked = data.isGame4Unlocked;
+            isGame5Unlocked = data.isGame5Unlocked;
             isChallengeUnlocked = data.isChallengeUnlocked;
             isEasyModeCompleted = data.isEasyModeCompleted;
             isMediumModeCompleted = data.isMediumModeCompleted;
@@ -69,6 +72,7 @@ class DataSaved
     public bool isGame2Unlocked;
     public bool isGame3Unlocked;
     public bool isGame4Unlocked;
+    public bool isGame5Unlocked;
     public bool isChallengeUnlocked;
     public bool isEasyModeCompleted;
     public bool isMediumModeCompleted;

@@ -14,6 +14,7 @@ public class GamePathManager : MonoBehaviour
     public TMP_Text textScore;
     public TMP_Text time;
     public GameObject panneauFin;
+    public SaveSerial saveSerial;
 
     private bool drawing;
     private int indexLine;
@@ -52,7 +53,7 @@ public class GamePathManager : MonoBehaviour
         point1Check = false;
         point2Check = false;
 
-        instruction.SetText("Aller de " + point1.name + " à " + point2.name);
+        instruction.SetText("Aller de " + point1.name + " ï¿½ " + point2.name);
     }
 
     // Update is called once per frame
@@ -71,7 +72,19 @@ public class GamePathManager : MonoBehaviour
         }
         if (currentTime > 70)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+
+            }
+            else
+            {
+                if (score > 10)
+                {
+                    saveSerial.isGame5Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
 
         if (Input.touchCount >= 1 && !error && !win)
@@ -146,7 +159,7 @@ public class GamePathManager : MonoBehaviour
             point1Check = false;
             point2Check = false;
 
-            instruction.SetText("Aller de " + point1.name + " à " + point2.name);
+            instruction.SetText("Aller de " + point1.name + " a " + point2.name);
             score++;
             textScore.text = "" + score;
             win = true;
