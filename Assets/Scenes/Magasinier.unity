@@ -2531,6 +2531,8 @@ MonoBehaviour:
   - {fileID: 918393243}
   - {fileID: 1002826775}
   - {fileID: 799236822}
+  checkListSR: {fileID: 2026862577}
+  checkList: {fileID: 2026862579}
   nbProjosText: {fileID: 2137876865}
   nbMicrosText: {fileID: 953124594}
   nbTamboursText: {fileID: 1267748424}

@@ -20,6 +20,8 @@ public class Objets : MonoBehaviour
     private SpriteRenderer tambourSR;
     private SpriteRenderer microSR;
     private SpriteRenderer projecteurSR;
+    public SpriteRenderer checkListSR;
+    public CheckList checkList;
 
     public TMP_Text nbProjosText;
     public TMP_Text nbMicrosText;
@@ -71,6 +73,8 @@ public class Objets : MonoBehaviour
             tambourSR.enabled = false;
             microSR.enabled = false;
             projecteurSR.enabled = false;
+            checkList.isActive = false;
+            checkListSR.enabled = false;
 
             nbProjosText.text = "0";
             nbMicrosText.text = "0";
