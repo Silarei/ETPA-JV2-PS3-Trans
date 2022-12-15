@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 704.75 210.39">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #941b80;
+        stroke: #662482;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: #f5f5f5;
+        font-family: AcuminConcept-Black, 'Acumin Variable Concept';
+        font-size: 93.59px;
+        font-variation-settings: 'wght' 800, 'wdth' 100, 'slnt' 0;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <rect class="cls-1" x="2.5" y="2.5" width="494.93" height="205.39"/>
+    <text class="cls-2" transform="translate(162.53 141.92) scale(.83 1)"><tspan class="cls-3" x="0" y="0">H</tspan><tspan x="69.44" y="0">all 8</tspan></text>
+  </g>
+</svg>
