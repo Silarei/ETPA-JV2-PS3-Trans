@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_3" data-name="Calque 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 736.53 291.38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e8398d;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: Nunito-Bold, Nunito;
+        font-size: 141.77px;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+      }
+
+      .cls-2, .cls-4 {
+        fill: #ad136d;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-6 {
+        fill: #f4abcc;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-4" x="2.11" y="63.71" width="709.38" height="225" rx="11.33" ry="11.33"/>
+  <rect class="cls-6" x="14.52" y="48.74" width="709.38" height="222.99" rx="9.7" ry="9.7"/>
+  <path class="cls-1" d="m712.57,274.23H25.85c-7.63,0-13.83-6.21-13.83-13.83V60.07c0-7.63,6.21-13.83,13.83-13.83h686.71c7.63,0,13.83,6.21,13.83,13.83v200.32c0,7.63-6.21,13.83-13.83,13.83ZM25.85,51.24c-4.87,0-8.83,3.96-8.83,8.83v200.32c0,4.87,3.96,8.83,8.83,8.83h686.71c4.87,0,8.83-3.96,8.83-8.83V60.07c0-4.87-3.96-8.83-8.83-8.83H25.85Z"/>
+  <rect class="cls-1" x="31.16" y="60.34" width="678.17" height="199.5" rx="6" ry="6"/>
+  <text class="cls-2" transform="translate(121.73 209.61)"><tspan x="0" y="0">Di</tspan><tspan class="cls-5" x="144.18" y="0">f</tspan><tspan x="192.53" y="0">fici</tspan><tspan class="cls-7" x="382.21" y="0">l</tspan><tspan x="426.73" y="0">e</tspan></text>
+  <text class="cls-3" transform="translate(126.74 204.13)"><tspan x="0" y="0">Di</tspan><tspan class="cls-5" x="144.18" y="0">f</tspan><tspan x="192.53" y="0">fici</tspan><tspan class="cls-7" x="382.21" y="0">l</tspan><tspan x="426.73" y="0">e</tspan></text>
+</svg>

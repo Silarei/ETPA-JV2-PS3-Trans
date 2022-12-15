@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 724.28 291.38">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ffd004;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        fill: #ffd004;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        fill: #ffe19a;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #d9a601;
+      }
+
+      .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-8, .cls-7 {
+        font-family: Nunito-Bold, Nunito;
+        font-size: 143.18px;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text/>
+  <rect class="cls-6" y="63.75" width="709.38" height="224.87" rx="11.33" ry="11.33"/>
+  <rect class="cls-5" x="12.41" y="48.79" width="709.38" height="222.86" rx="9.7" ry="9.7"/>
+  <rect class="cls-2" x="12.41" y="48.79" width="709.38" height="222.86" rx="11.33" ry="11.33"/>
+  <rect class="cls-3" x="29.05" y="60.38" width="678.17" height="199.39" rx="6" ry="6"/>
+  <text class="cls-7" transform="translate(160.88 209.35)"><tspan class="cls-1" x="0" y="0">F</tspan><tspan x="77.6" y="0">aci</tspan><tspan class="cls-4" x="260.01" y="0">l</tspan><tspan x="304.96" y="0">e</tspan></text>
+  <text class="cls-8" transform="translate(165.94 203.82)"><tspan class="cls-1" x="0" y="0">F</tspan><tspan x="77.6" y="0">aci</tspan><tspan class="cls-4" x="260.01" y="0">l</tspan><tspan x="304.96" y="0">e</tspan></text>
+  <text/>
+</svg>

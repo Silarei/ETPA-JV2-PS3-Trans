@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_4" data-name="Calque 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 736.53 291.38">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        fill: #90286a;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-4, .cls-5 {
+        font-family: Nunito-Bold, Nunito;
+        font-size: 110px;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+      }
+
+      .cls-6 {
+        fill: #d64290;
+      }
+
+      .cls-7 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5, .cls-10 {
+        fill: #491641;
+      }
+
+      .cls-11 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-10" x="2.11" y="63.71" width="709.38" height="225" rx="11.33" ry="11.33"/>
+  <rect class="cls-6" x="14.52" y="48.74" width="709.38" height="222.99" rx="9.7" ry="9.7"/>
+  <path class="cls-3" d="m712.57,274.23H25.85c-7.63,0-13.83-6.21-13.83-13.83V60.07c0-7.63,6.21-13.83,13.83-13.83h686.71c7.63,0,13.83,6.21,13.83,13.83v200.32c0,7.63-6.21,13.83-13.83,13.83ZM25.85,51.24c-4.87,0-8.83,3.96-8.83,8.83v200.32c0,4.87,3.96,8.83,8.83,8.83h686.71c4.87,0,8.83-3.96,8.83-8.83V60.07c0-4.87-3.96-8.83-8.83-8.83H25.85Z"/>
+  <rect class="cls-3" x="31.16" y="60.34" width="678.17" height="199.5" rx="6" ry="6"/>
+  <text class="cls-5" transform="translate(49.78 196.29)"><tspan class="cls-2" x="0" y="0">O</tspan><tspan class="cls-14" x="83.99" y="0">r</tspan><tspan class="cls-7" x="122.82" y="0">g</tspan><tspan class="cls-1" x="184.85" y="0">a</tspan><tspan class="cls-9" x="241.61" y="0">n</tspan><tspan class="cls-14" x="302.31" y="0">i</tspan><tspan class="cls-15" x="326.07" y="0">s</tspan><tspan class="cls-11" x="376.55" y="0">a</tspan><tspan class="cls-13" x="433.88" y="0">t</tspan><tspan class="cls-8" x="473.34" y="0">e</tspan><tspan class="cls-12" x="529.7" y="0">u</tspan><tspan x="589.89" y="0">r</tspan></text>
+  <text class="cls-4" transform="translate(53.75 193.05)"><tspan class="cls-2" x="0" y="0">O</tspan><tspan class="cls-14" x="83.99" y="0">r</tspan><tspan class="cls-7" x="122.82" y="0">g</tspan><tspan class="cls-1" x="184.85" y="0">a</tspan><tspan class="cls-9" x="241.61" y="0">n</tspan><tspan class="cls-14" x="302.31" y="0">i</tspan><tspan class="cls-15" x="326.07" y="0">s</tspan><tspan class="cls-11" x="376.55" y="0">a</tspan><tspan class="cls-13" x="433.88" y="0">t</tspan><tspan class="cls-8" x="473.34" y="0">e</tspan><tspan class="cls-12" x="529.7" y="0">u</tspan><tspan x="589.89" y="0">r</tspan></text>
+</svg>

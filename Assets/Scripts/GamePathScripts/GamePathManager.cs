@@ -14,6 +14,7 @@ public class GamePathManager : MonoBehaviour
     public TMP_Text textScore;
     public TMP_Text time;
     public GameObject panneauFin;
+    public SaveSerial saveSerial;
 
     private bool drawing;
     private int indexLine;
@@ -33,6 +34,7 @@ public class GamePathManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        saveSerial.LoadData();
         cross.color = new Color(1, 1, 1, 0);
         check.color = new Color(1, 1, 1, 0);
         error = false;
@@ -52,7 +54,7 @@ public class GamePathManager : MonoBehaviour
         point1Check = false;
         point2Check = false;
 
-        instruction.SetText("Aller de " + point1.name + " à " + point2.name);
+        instruction.SetText("Aller de " + point1.name + " a " + point2.name);
     }
 
     // Update is called once per frame
@@ -71,7 +73,36 @@ public class GamePathManager : MonoBehaviour
         }
         if (currentTime > 70)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (currentTime < 50)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                saveSerial.atWhichGameAreWe++; 
+                saveSerial.SaveData(); 
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
+                {
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else
+                {
+                    SceneManager.LoadScene("MenuChallenge");
+                }
+            }
+            else
+            {
+                if (score > 10)
+                {
+                    saveSerial.isGame5Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
 
         if (Input.touchCount >= 1 && !error && !win)
@@ -104,6 +135,9 @@ public class GamePathManager : MonoBehaviour
             theLine.positionCount = 0;
             indexLine = 0;
             drawing = false;
+            currentHittedPiece = null;
+            point1Check = false;
+            point2Check = false;
         }
 
         if (currentHittedPiece != null && currentHittedPiece != gameObjectList[0] && !win && !error)
@@ -143,7 +177,7 @@ public class GamePathManager : MonoBehaviour
             point1Check = false;
             point2Check = false;
 
-            instruction.SetText("Aller de " + point1.name + " à " + point2.name);
+            instruction.SetText("Aller de " + point1.name + " a " + point2.name);
             score++;
             textScore.text = "" + score;
             win = true;

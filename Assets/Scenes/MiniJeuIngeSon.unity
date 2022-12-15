@@ -3364,6 +3364,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2113516372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113516374}
+  - component: {fileID: 2113516373}
+  m_Layer: 0
+  m_Name: SaveObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2113516373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113516372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a31777250e45546881efb9856c84cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGame2Unlocked: 0
+  isGame3Unlocked: 0
+  isGame4Unlocked: 0
+  isChallengeUnlocked: 0
+  isEasyModeCompleted: 0
+  isMediumModeCompleted: 0
+  isHardModeCompleted: 0
+  isHardcoreModeCompleted: 0
+  isItChallengeMode: 0
+--- !u!4 &2113516374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113516372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16136146, y: 0.13142502, z: 49.653084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132023147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,10 +3518,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musiciens: {fileID: 2132023152}
   spotBleu: {fileID: 1609154047}
+  bleuOn: 0
   spotRouge: {fileID: 949395356}
+  rougeOn: 0
   spotVert: {fileID: 128730120}
-  delayTime: 0
-  checkTime: 0
+  vertOn: 0
   generalValue: {fileID: 86955333}
   slider1: {fileID: 723114029}
   slider1Value: {fileID: 898242487}
@@ -3525,4 +3579,6 @@ MonoBehaviour:
   currentTime: 0
   panneauFin: {fileID: 762804428}
   panneauSR: {fileID: 762804429}
+  saveSerial: {fileID: 2113516373}
+  getVolume: {fileID: 2132023151}
   gameOver: 0

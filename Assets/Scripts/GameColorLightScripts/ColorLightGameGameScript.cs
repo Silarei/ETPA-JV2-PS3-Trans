@@ -13,6 +13,7 @@ public class ColorLightGameGameScript : MonoBehaviour
     public GameObject panneauFin;
     public ColorLightGameColorChange cLGCC;
     public List<ButtonColorChange> bCCList;
+    public SaveSerial saveSerial;
 
     private bool end;
     private int score;
@@ -25,6 +26,7 @@ public class ColorLightGameGameScript : MonoBehaviour
         score = 0;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         RandomColorChange();
+        saveSerial.LoadData();
     }
 
     // Update is called once per frame
@@ -43,7 +45,36 @@ public class ColorLightGameGameScript : MonoBehaviour
         }
         if (currentTime > 70)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (score > 10)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                saveSerial.atWhichGameAreWe++;
+                saveSerial.SaveData();
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
+                {
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else
+                {
+                    SceneManager.LoadScene("MenuChallenge");
+                }
+            }
+            else
+            {
+                if (score > 10)
+                {
+                    saveSerial.isGame2Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
         if (LightPlayer.color == mySpriteRenderer.color && !end)
         {

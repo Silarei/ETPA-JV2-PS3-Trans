@@ -10,11 +10,17 @@ public class SaveSerial : MonoBehaviour
     public bool isGame2Unlocked;
     public bool isGame3Unlocked;
     public bool isGame4Unlocked;
+    public bool isGame5Unlocked;
     public bool isChallengeUnlocked;
     public bool isEasyModeCompleted;
     public bool isMediumModeCompleted;
     public bool isHardModeCompleted;
     public bool isHardcoreModeCompleted;
+    public bool isItChallengeMode;
+    public List<string> orderListMiniGame;
+    public int atWhichGameAreWe;
+    public string difficulty;
+    public List<bool> success;
 
     public void SaveData()
     {
@@ -25,11 +31,17 @@ public class SaveSerial : MonoBehaviour
         data.isGame2Unlocked = isGame2Unlocked;
         data.isGame3Unlocked = isGame3Unlocked;
         data.isGame4Unlocked = isGame4Unlocked;
+        data.isGame5Unlocked = isGame5Unlocked;
         data.isChallengeUnlocked = isChallengeUnlocked;
         data.isEasyModeCompleted = isEasyModeCompleted;
         data.isMediumModeCompleted = isMediumModeCompleted;
         data.isHardModeCompleted = isHardModeCompleted;
         data.isHardcoreModeCompleted = isHardcoreModeCompleted;
+        data.isItChallengeMode = isItChallengeMode;
+        data.orderListMiniGame = orderListMiniGame;
+        data.atWhichGameAreWe = atWhichGameAreWe;
+        data.difficulty = difficulty;
+        data.success = success;
         bf.Serialize(file, data);
         file.Close();
     }
@@ -43,16 +55,23 @@ public class SaveSerial : MonoBehaviour
             FileStream file =
                        File.Open(Application.persistentDataPath
                        + "/MySaveData.dat", FileMode.Open);
+            file.Position = 0;
             DataSaved data = (DataSaved)bf.Deserialize(file);
             file.Close();
             isGame2Unlocked = data.isGame2Unlocked;
             isGame3Unlocked = data.isGame3Unlocked;
             isGame4Unlocked = data.isGame4Unlocked;
+            isGame5Unlocked = data.isGame5Unlocked;
             isChallengeUnlocked = data.isChallengeUnlocked;
             isEasyModeCompleted = data.isEasyModeCompleted;
             isMediumModeCompleted = data.isMediumModeCompleted;
             isHardModeCompleted = data.isHardModeCompleted;
             isHardcoreModeCompleted = data.isHardcoreModeCompleted;
+            isItChallengeMode = data.isItChallengeMode;
+            orderListMiniGame = data.orderListMiniGame;
+            atWhichGameAreWe = data.atWhichGameAreWe;
+            difficulty = data.difficulty;
+            success = data.success;
             Debug.Log("Game data loaded!");
         }
         else
@@ -60,14 +79,21 @@ public class SaveSerial : MonoBehaviour
     }
 }
 
+[Serializable]
 class DataSaved
 {
     public bool isGame2Unlocked;
     public bool isGame3Unlocked;
     public bool isGame4Unlocked;
+    public bool isGame5Unlocked;
     public bool isChallengeUnlocked;
     public bool isEasyModeCompleted;
     public bool isMediumModeCompleted;
     public bool isHardModeCompleted;
     public bool isHardcoreModeCompleted;
+    public bool isItChallengeMode;
+    public List<string> orderListMiniGame;
+    public int atWhichGameAreWe;
+    public string difficulty;
+    public List<bool> success;
 }

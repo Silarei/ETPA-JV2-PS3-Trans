@@ -11,6 +11,7 @@ public class GamePuzzleGameScript : MonoBehaviour
     public float currentTime;
     public TMP_Text timer;
     private float end;
+    public SaveSerial saveSerial;
 
     public GameObject saxoPiece;
     public GameObject pianoPiece;
@@ -34,6 +35,7 @@ public class GamePuzzleGameScript : MonoBehaviour
     void Start()
     {
         victory = false;
+        saveSerial.LoadData();
         end = 0f;
         var aleaLevel = Random.Range(0, 1);
         if (aleaLevel <= 0.5f)
@@ -67,12 +69,40 @@ public class GamePuzzleGameScript : MonoBehaviour
         if (pieceGatherer.grillePosOccupied.Count == 16 && !victory)
         {
             end = currentTime;
-            Debug.Log("Victoire !");
             victory = true;
         }
         if (currentTime - end > 10 && victory)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (currentTime < 50)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                saveSerial.atWhichGameAreWe++;
+                saveSerial.SaveData();
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
+                { 
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else
+                { 
+                    SceneManager.LoadScene("MenuChallenge");
+                }
+            }
+            else
+            {
+                if (currentTime < 50)
+                {
+                    saveSerial.isGame4Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
     }
 }

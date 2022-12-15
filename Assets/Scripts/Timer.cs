@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public float currentTime;
     public GameObject panneauFin;
     public SpriteRenderer panneauSR;
+    public SaveSerial saveSerial;
+    public GetVolume getVolume;
 
     public bool gameOver = false;
 
@@ -17,6 +19,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         panneauSR = panneauFin.GetComponent<SpriteRenderer>();
+        saveSerial.LoadData();
     }
 
     // Update is called once per frame
@@ -37,7 +40,37 @@ public class Timer : MonoBehaviour
 
         if (currentTime > 65)
         {
-            SceneManager.LoadScene("MenuFreeGame");
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (getVolume.score > 15)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+
+                saveSerial.atWhichGameAreWe++;
+                saveSerial.SaveData();
+                if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count) 
+                { 
+                    SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
+                }
+                else 
+                { 
+                    SceneManager.LoadScene("MenuChallenge");
+                }
+            }
+            else
+            {
+                if (getVolume.score > 15)
+                {
+                    saveSerial.isGame3Unlocked = true;
+                    saveSerial.SaveData();
+                }
+                SceneManager.LoadScene("MenuFreeGame");
+            }
         }
     }
 }
