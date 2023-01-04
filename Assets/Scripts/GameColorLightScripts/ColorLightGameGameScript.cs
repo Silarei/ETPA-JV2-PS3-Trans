@@ -55,6 +55,27 @@ public class ColorLightGameGameScript : MonoBehaviour
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
+                if (difficulty == "medium")
+                {
+                    if (score > 20)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                if (difficulty == "hard")
+                {
+                    if (score > 30)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                if (difficulty == "hardcore")
+                {
+                    if (score > 55)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
                 saveSerial.atWhichGameAreWe++;
                 saveSerial.SaveData();
                 if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
@@ -79,7 +100,6 @@ public class ColorLightGameGameScript : MonoBehaviour
         if (LightPlayer.color == mySpriteRenderer.color && !end)
         {
             RandomColorChange();
-            Handheld.Vibrate();
             score++;
             textScore.text = "" + score;
             ResetGame();

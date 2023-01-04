@@ -83,6 +83,27 @@ public class GamePuzzleGameScript : MonoBehaviour
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
+                else if (difficulty == "medium")
+                {
+                    if (currentTime < 40)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                else if (difficulty == "hard")
+                {
+                    if (currentTime < 30)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                else if (difficulty == "hardcore")
+                {
+                    if (currentTime < 20)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
                 saveSerial.atWhichGameAreWe++;
                 saveSerial.SaveData();
                 if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)

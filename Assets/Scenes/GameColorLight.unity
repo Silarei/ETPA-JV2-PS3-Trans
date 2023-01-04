@@ -667,7 +667,6 @@ GameObject:
   - component: {fileID: 689885559}
   - component: {fileID: 689885558}
   - component: {fileID: 689885557}
-  - component: {fileID: 689885556}
   - component: {fileID: 689885555}
   m_Layer: 5
   m_Name: IntensityLow
@@ -713,18 +712,6 @@ MonoBehaviour:
   red: 0.2
   green: 0.2
   blue: 0.2
---- !u!114 &689885556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689885553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbc2ec299ef1584eb179c662fa5f63e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &689885557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1378,6 @@ GameObject:
   - component: {fileID: 1712012541}
   - component: {fileID: 1712012540}
   - component: {fileID: 1712012539}
-  - component: {fileID: 1712012538}
   - component: {fileID: 1712012542}
   m_Layer: 5
   m_Name: Blue1
@@ -1420,18 +1406,6 @@ RectTransform:
   m_AnchoredPosition: {x: -265, y: -555}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1712012538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712012536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbc2ec299ef1584eb179c662fa5f63e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1712012539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,7 +1541,6 @@ GameObject:
   - component: {fileID: 1825695742}
   - component: {fileID: 1825695741}
   - component: {fileID: 1825695740}
-  - component: {fileID: 1825695739}
   - component: {fileID: 1825695743}
   m_Layer: 5
   m_Name: Green1
@@ -1596,18 +1569,6 @@ RectTransform:
   m_AnchoredPosition: {x: 285, y: -555}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1825695739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825695737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbc2ec299ef1584eb179c662fa5f63e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1825695740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1743,7 +1704,6 @@ GameObject:
   - component: {fileID: 1979097027}
   - component: {fileID: 1979097026}
   - component: {fileID: 1979097025}
-  - component: {fileID: 1979097024}
   - component: {fileID: 1979097028}
   m_Layer: 5
   m_Name: Red1
@@ -1772,18 +1732,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: -555}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1979097024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979097022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbc2ec299ef1584eb179c662fa5f63e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1979097025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,7 +1951,6 @@ GameObject:
   - component: {fileID: 2087747181}
   - component: {fileID: 2087747180}
   - component: {fileID: 2087747179}
-  - component: {fileID: 2087747178}
   - component: {fileID: 2087747177}
   m_Layer: 5
   m_Name: IntensityHigh
@@ -2049,18 +1996,6 @@ MonoBehaviour:
   red: 1
   green: 1
   blue: 1
---- !u!114 &2087747178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087747175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbc2ec299ef1584eb179c662fa5f63e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2087747179
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: 
-  unlocked: 1
+  unlocked: 0
   challenge: 1
   saveSerial: {fileID: 1355622747}
   listMiniGame:
@@ -866,6 +866,7 @@ MonoBehaviour:
   - MiniJeuIngeSon
   - GamePuzzleScene
   - GamePath
+  - Magasinier
   difficulty: easy
 --- !u!61 &842113414
 BoxCollider2D:
@@ -1468,7 +1469,12 @@ MonoBehaviour:
   unlocked: 0
   challenge: 1
   saveSerial: {fileID: 1355622747}
-  listMiniGame: []
+  listMiniGame:
+  - GameColorLight
+  - MiniJeuIngeSon
+  - GamePuzzleScene
+  - GamePath
+  - Magasinier
   difficulty: medium
 --- !u!61 &1480570616
 BoxCollider2D:
@@ -1695,7 +1701,12 @@ MonoBehaviour:
   unlocked: 0
   challenge: 1
   saveSerial: {fileID: 1355622747}
-  listMiniGame: []
+  listMiniGame:
+  - GameColorLight
+  - MiniJeuIngeSon
+  - GamePuzzleScene
+  - GamePath
+  - Magasinier
   difficulty: hard
 --- !u!61 &2034579933
 BoxCollider2D:
@@ -1809,7 +1820,12 @@ MonoBehaviour:
   unlocked: 0
   challenge: 1
   saveSerial: {fileID: 1355622747}
-  listMiniGame: []
+  listMiniGame:
+  - GameColorLight
+  - MiniJeuIngeSon
+  - GamePuzzleScene
+  - GamePath
+  - Magasinier
   difficulty: hardcore
 --- !u!61 &2122529648
 BoxCollider2D:

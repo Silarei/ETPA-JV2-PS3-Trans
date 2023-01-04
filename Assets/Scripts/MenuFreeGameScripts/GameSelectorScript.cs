@@ -27,6 +27,7 @@ public class GameSelectorScript : MonoBehaviour
                 {
                     currentHittedSelector = hit.collider.GetComponent<SelectPointBehavior>();
                     currentHittedSelector.LoadGame();
+                    currentHittedSelector = null;
                 }
             }
         }

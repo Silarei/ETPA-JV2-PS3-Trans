@@ -50,7 +50,7 @@ public class Unlocker : MonoBehaviour
                     bruh.color = new Color(1f, 1f, 1f, 0.4f);
                 }
             }
-            else if (item.name == "")
+            else if (item.name == "point_4_8")
             {
                 if (saveSerial.isGame5Unlocked)
                 {
@@ -62,7 +62,7 @@ public class Unlocker : MonoBehaviour
                     bruh.color = new Color(1f, 1f, 1f, 0.4f);
                 }
             }
-            else if (item.name == "ButtonChallenge")
+            else if (item.name == "ButtonChallenge" || item.name == "ButtonFacile" || item.name == "ButtonHistoire")
             {
                 if (saveSerial.isChallengeUnlocked)
                 {

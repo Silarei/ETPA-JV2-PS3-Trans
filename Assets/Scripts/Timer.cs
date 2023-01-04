@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public SpriteRenderer panneauSR;
     public SaveSerial saveSerial;
     public GetVolume getVolume;
+    public Objets objets;
 
     public bool gameOver = false;
 
@@ -45,9 +46,70 @@ public class Timer : MonoBehaviour
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (getVolume.score > 15)
+                    if (getVolume != null)
                     {
-                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        if (getVolume.score > 15)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                    else
+                    {
+                        if (objets.score > 1)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                }
+                else if (difficulty == "medium")
+                {
+                    if (getVolume != null)
+                    {
+                        if (getVolume.score > 25)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                    else
+                    {
+                        if (objets.score >3)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                }
+                else if (difficulty == "hard")
+                {
+                    if (getVolume != null)
+                    {
+                        if (getVolume.score > 40)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                    else
+                    {
+                        if (objets.score > 5)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                }
+                else if (difficulty == "hardcore")
+                {
+                    if (getVolume != null)
+                    {
+                        if (getVolume.score > 50)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
+                    }
+                    else
+                    {
+                        if (objets.score > 7)
+                        {
+                            saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                        }
                     }
                 }
 
@@ -64,11 +126,21 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                if (getVolume.score > 15)
+                if (getVolume != null)
                 {
-                    saveSerial.isGame3Unlocked = true;
-                    saveSerial.SaveData();
+                    if (getVolume.score > 15)
+                    {
+                        saveSerial.isGame3Unlocked = true;
+                    }
                 }
+                else
+                {
+                    if (objets.score > 1)
+                    {
+                        saveSerial.isChallengeUnlocked = true;
+                    }
+                }
+                saveSerial.SaveData();
                 SceneManager.LoadScene("MenuFreeGame");
             }
         }
