@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuChallenge.unity
     guid: 7c85a9904c4f57d4e84fc0236901622b
+  - enabled: 1
+    path: Assets/Scenes/Magasinier.unity
+    guid: c1cfc9eccd53a194d87d0c1a912474e8
   m_configObjects: {}

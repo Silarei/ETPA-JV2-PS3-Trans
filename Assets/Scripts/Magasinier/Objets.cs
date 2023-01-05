@@ -65,8 +65,6 @@ public class Objets : MonoBehaviour
         if (win == true)
         {
 
-            Handheld.Vibrate();
-
             guitareSR.enabled = false;
             synthetizerSR.enabled = false;
             enceinteSR.enabled = false;

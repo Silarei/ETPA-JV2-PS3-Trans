@@ -78,7 +78,28 @@ public class GamePathManager : MonoBehaviour
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (currentTime < 50)
+                    if (score > 10)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                else if (difficulty == "medium")
+                {
+                    if (score > 15)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                else if (difficulty == "hard")
+                {
+                    if (score > 20)
+                    {
+                        saveSerial.success[saveSerial.atWhichGameAreWe] = true;
+                    }
+                }
+                else if (difficulty == "hardcore")
+                {
+                    if (score > 25)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }

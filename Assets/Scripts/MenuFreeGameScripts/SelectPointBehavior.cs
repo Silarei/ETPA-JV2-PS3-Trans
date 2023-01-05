@@ -65,8 +65,14 @@ public class SelectPointBehavior : MonoBehaviour
             {
                 saveSerial.isItChallengeMode = false;
                 saveSerial.SaveData();
-                SceneManager.LoadScene(sceneToLoad);
+                StartCoroutine(Go());
             }
         }
+    }
+
+    private IEnumerator Go()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
