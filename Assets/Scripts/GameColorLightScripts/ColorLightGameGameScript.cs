@@ -15,7 +15,7 @@ public class ColorLightGameGameScript : MonoBehaviour
     public List<ButtonColorChange> bCCList;
     public SaveSerial saveSerial;
 
-    private bool end;
+    public bool end;
     private int score;
     private float red, green, blue;
     private SpriteRenderer mySpriteRenderer;
@@ -43,7 +43,7 @@ public class ColorLightGameGameScript : MonoBehaviour
         {
             time.text = "" + System.Math.Round((60 - currentTime), 0);
         }
-        if (currentTime > 70)
+        if (currentTime > 64)
         {
             if (saveSerial.isItChallengeMode)
             {

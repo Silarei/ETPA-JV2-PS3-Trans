@@ -368,6 +368,7 @@ MonoBehaviour:
   - {fileID: 2087747177}
   - {fileID: 689885555}
   saveSerial: {fileID: 2105435725}
+  end: 0
 --- !u!1 &589814565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1297,7 @@ MonoBehaviour:
   green1: 0
   intensityLow: 0
   intensityHigh: 0
+  cLGGS: {fileID: 355447961}
   redSpot2SR: {fileID: 2042096179}
   greenSpot2SR: {fileID: 1456827428}
   blueSpot2SR: {fileID: 836546745}

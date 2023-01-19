@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHittedPiece: {fileID: 0}
+  gPGS: {fileID: 1155059047}
 --- !u!4 &989328733
 Transform:
   m_ObjectHideFlags: 0
@@ -336,6 +337,7 @@ MonoBehaviour:
   guitarePiece90: {fileID: 7386873183791500247, guid: e2b6276cc4c003b4f9b7a9317a156584, type: 3}
   batteriePiece: {fileID: 9002753830738193412, guid: eee2d4c35f45945428399b8c05b5bc38, type: 3}
   batteriePiece90: {fileID: 2192328358345966105, guid: c50b5c6bdb7763d49b20b3f4e9da8b74, type: 3}
+  victory: 0
 --- !u!1 &1333223936
 GameObject:
   m_ObjectHideFlags: 0

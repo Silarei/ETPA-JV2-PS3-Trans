@@ -71,7 +71,7 @@ public class GamePathManager : MonoBehaviour
         {
             time.text = "" + System.Math.Round((60 - currentTime), 0);
         }
-        if (currentTime > 70)
+        if (currentTime > 65)
         {
             if (saveSerial.isItChallengeMode)
             {
@@ -126,7 +126,7 @@ public class GamePathManager : MonoBehaviour
             }
         }
 
-        if (Input.touchCount >= 1 && !error && !win)
+        if (Input.touchCount >= 1 && !error && !win && !end)
         {
             var tempPosition = Input.touches[0].position;
             var screenPos = new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane - Camera.main.transform.position.z);
