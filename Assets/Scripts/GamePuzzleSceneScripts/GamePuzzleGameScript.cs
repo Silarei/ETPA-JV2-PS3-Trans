@@ -30,7 +30,7 @@ public class GamePuzzleGameScript : MonoBehaviour
     private GameObject piece5;
     private GameObject piece6;
 
-    private bool victory;
+    public bool victory;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,7 +71,7 @@ public class GamePuzzleGameScript : MonoBehaviour
             end = currentTime;
             victory = true;
         }
-        if (currentTime - end > 10 && victory)
+        if (currentTime - end > 5 && victory)
         {
             if (saveSerial.isItChallengeMode)
             {
