@@ -7,10 +7,8 @@ public class ChangeNumbers : MonoBehaviour
 {
     public TMP_Text nbProjos;
     public TMP_Text nbMicros;
-    public TMP_Text nbTambours;
     public TMP_Text nbEnceintes;
     public TMP_Text nbSynthes;
-    public TMP_Text nbGuitares;
 
     void Start()
     {
@@ -25,134 +23,66 @@ public class ChangeNumbers : MonoBehaviour
 
     public void ChangeNbProjos()
     {
-        if (nbProjos.text == "0")
+        if (nbProjos.text != "5")
         {
-            nbProjos.text = "1";
+            int projosValue = int.Parse(nbProjos.text);
+
+            nbProjos.text = (projosValue + 1).ToString();
         }
 
-        else if (nbProjos.text == "1")
-        {
-            nbProjos.text = "2";
-        }
-
-        else if (nbProjos.text == "2")
-        {
-            nbProjos.text = "4";
-        }
-
-        else
+        else if (nbProjos.text == "5")
         {
             nbProjos.text = "0";
         }
+
     }
 
     public void ChangeNbMicros()
     {
-        if (nbMicros.text == "0")
+        if (nbMicros.text != "5")
         {
-            nbMicros.text = "1";
+            int microsValue = int.Parse(nbMicros.text);
+
+            nbMicros.text = (microsValue + 1).ToString();
         }
 
-        else if (nbMicros.text == "1")
-        {
-            nbMicros.text = "2";
-        }
-
-        else if (nbMicros.text == "2")
-        {
-            nbMicros.text = "3";
-        }
-
-        else
+        else if (nbMicros.text == "5")
         {
             nbMicros.text = "0";
         }
+
     }
 
-    public void ChangeNbTambours()
-    {
-        if (nbTambours.text == "0")
-        {
-            nbTambours.text = "2";
-        }
-
-        else if (nbTambours.text == "2")
-        {
-            nbTambours.text = "5";
-        }
-
-        else if (nbTambours.text == "5")
-        {
-            nbTambours.text = "6";
-        }
-
-        else
-        {
-            nbTambours.text = "0";
-        }
-    }
 
     public void ChangeNbEnceintes()
     {
-        if (nbEnceintes.text == "0")
+        if (nbEnceintes.text != "5")
         {
-            nbEnceintes.text = "2";
+            int enceintesValue = int.Parse(nbEnceintes.text);
+
+            nbEnceintes.text = (enceintesValue + 1).ToString();
         }
 
-        else if (nbEnceintes.text == "2")
-        {
-            nbEnceintes.text = "3";
-        }
-
-        else if (nbEnceintes.text == "3")
-        {
-            nbEnceintes.text = "5";
-        }
-
-        else
+        else if (nbEnceintes.text == "5")
         {
             nbEnceintes.text = "0";
         }
+
     }
 
     public void ChangeNbSynthes()
     {
-        if (nbSynthes.text == "0")
+        if (nbSynthes.text != "5")
         {
-            nbSynthes.text = "1";
+            int synthesValue = int.Parse(nbSynthes.text);
+
+            nbSynthes.text = (synthesValue + 1).ToString();
         }
 
-        else if (nbSynthes.text == "1")
-        {
-            nbSynthes.text = "2";
-        }
-
-        else if (nbSynthes.text == "2")
-        {
-            nbSynthes.text = "3";
-        }
-
-        else
+        else if (nbSynthes.text == "5")
         {
             nbSynthes.text = "0";
         }
-    }
 
-    public void ChangeNbGuitares()
-    {
-        if (nbGuitares.text == "0")
-        {
-            nbGuitares.text = "1";
-        }
-
-        else if (nbGuitares.text == "1")
-        {
-            nbGuitares.text = "2";
-        }
-
-        else
-        {
-            nbGuitares.text = "0";
-        }
     }
 }
