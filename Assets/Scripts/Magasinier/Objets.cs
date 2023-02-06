@@ -7,45 +7,39 @@ public class Objets : MonoBehaviour
 {
 
     public List<GameObject> objets;
-    public List<SpriteRenderer> guitaresSRList;
     public List<SpriteRenderer> synthetizersSRList;
     public List<SpriteRenderer> enceintesSRList;
-    public List<SpriteRenderer> tamboursSRList;
     public List<SpriteRenderer> microsSRList;
     public List<SpriteRenderer> projecteursSRList;
 
-    private SpriteRenderer guitareSR;
     private SpriteRenderer synthetizerSR;
     private SpriteRenderer enceinteSR;
-    private SpriteRenderer tambourSR;
     private SpriteRenderer microSR;
     private SpriteRenderer projecteurSR;
-    public SpriteRenderer checkListSR;
+    public CanvasGroup checkListImage;
     public CheckList checkList;
 
     public TMP_Text nbProjosText;
     public TMP_Text nbMicrosText;
-    public TMP_Text nbTamboursText;
     public TMP_Text nbEnceintesText;
     public TMP_Text nbSynthesText;
-    public TMP_Text nbGuitaresText;
 
     public TMP_Text textScore;
     public int score;
 
-    public string nbGuitares;
     public string nbSynthetizers;
     public string nbEnceintes;
-    public string nbTambours;
     public string nbMicros;
     public string nbProjecteurs;
 
     public bool win = false;
 
-
+    
     void Start()
     {
         RandomizeObject();
+        checkListImage = GetComponent<CanvasGroup>();
+
     }
 
 
@@ -54,7 +48,7 @@ public class Objets : MonoBehaviour
 
         textScore.text = "" + score;
 
-        if (nbGuitares == nbGuitaresText.text && nbSynthetizers == nbSynthesText.text && nbEnceintes == nbEnceintesText.text && nbTambours == nbTamboursText.text && nbMicros == nbMicrosText.text && nbProjecteurs == nbProjosText.text)
+        if (nbSynthetizers == nbSynthesText.text && nbEnceintes == nbEnceintesText.text && nbMicros == nbMicrosText.text && nbProjecteurs == nbProjosText.text)
         {
             win = true;
             score++;
@@ -64,22 +58,19 @@ public class Objets : MonoBehaviour
 
         if (win == true)
         {
-
-            guitareSR.enabled = false;
+            
             synthetizerSR.enabled = false;
             enceinteSR.enabled = false;
-            tambourSR.enabled = false;
             microSR.enabled = false;
             projecteurSR.enabled = false;
             checkList.isActive = false;
-            checkListSR.enabled = false;
+            checkListImage.alpha = 0;
+            checkListImage.interactable = false;
 
             nbProjosText.text = "0";
             nbMicrosText.text = "0";
-            nbTamboursText.text = "0";
             nbEnceintesText.text = "0";
             nbSynthesText.text = "0";
-            nbGuitaresText.text = "0";
             RandomizeObject();
             win = false;
         }
@@ -94,35 +85,13 @@ public class Objets : MonoBehaviour
 
     public void RandomizeObject()
     {
-        var a = Random.Range(1, 4);//Guitare
         var b = Random.Range(1, 4);//Synthetizer
         var c = Random.Range(1, 4);//Enceinte
-        var d = Random.Range(1, 4);//Tambour
         var e = Random.Range(1, 4);//Micro
         var f = Random.Range(1, 4);//Projecteur
 
 
-        //Guitare
-        if (a == 1)
-        {
-            guitareSR = guitaresSRList[0].GetComponent<SpriteRenderer>();
-            guitareSR.enabled = true;
-            nbGuitares = "0";
-        }
 
-        else if (a == 2)
-        {
-            guitareSR = guitaresSRList[1].GetComponent<SpriteRenderer>();
-            guitareSR.enabled = true;
-            nbGuitares = "1";
-        }
-
-        else
-        {
-            guitareSR = guitaresSRList[2].GetComponent<SpriteRenderer>();
-            guitareSR.enabled = true;
-            nbGuitares = "2";
-        }
 
         //Synthetizer
         if (b == 1)
@@ -170,27 +139,6 @@ public class Objets : MonoBehaviour
         }
 
 
-        //Tambour
-        if (d == 1)
-        {
-            tambourSR = tamboursSRList[0].GetComponent<SpriteRenderer>();
-            tambourSR.enabled = true;
-            nbTambours = "2";
-        }
-
-        else if (d == 2)
-        {
-            tambourSR = tamboursSRList[1].GetComponent<SpriteRenderer>();
-            tambourSR.enabled = true;
-            nbTambours = "5";
-        }
-
-        else
-        {
-            tambourSR = tamboursSRList[2].GetComponent<SpriteRenderer>();
-            tambourSR.enabled = true;
-            nbTambours = "6";
-        }
 
 
         //Micro
