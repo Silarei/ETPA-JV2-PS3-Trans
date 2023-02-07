@@ -23,6 +23,8 @@ public class GamePathManager : MonoBehaviour
     private SpriteRenderer point2;
     private bool point1Check;
     private bool point2Check;
+    private SpriteRenderer oldPoint1;
+    private SpriteRenderer oldPoint2;
     private bool end;
 
     private float currentTime;
@@ -50,6 +52,9 @@ public class GamePathManager : MonoBehaviour
             randPoint = Random.Range(0.51f, 6.5f);
             point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
         }
+
+        oldPoint1 = point1;
+        oldPoint2 = point2;
 
         point1Check = false;
         point2Check = false;
@@ -189,12 +194,20 @@ public class GamePathManager : MonoBehaviour
             point1 = gameObjectList[Mathf.RoundToInt(randPoint)];
             randPoint = Random.Range(0.51f, 6.5f);
             point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
-            while (point1 == point2 || point2 == null)
+            while (point1 == null || point1 == oldPoint2 || point1 == oldPoint1)
+            {
+                randPoint = Random.Range(0.51f, 6.5f);
+                point1 = gameObjectList[Mathf.RoundToInt(randPoint)];
+            }
+            while (point1 == point2 || point2 == null || point2 == oldPoint2 || point2 == oldPoint1)
             {
                 randPoint = Random.Range(0.51f, 6.5f);
                 point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
             }
 
+            oldPoint1 = point1;
+            oldPoint2 = point2;
+            
             point1Check = false;
             point2Check = false;
 

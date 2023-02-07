@@ -27,10 +27,24 @@ public class MenuChallengeScript : MonoBehaviour
                 {
                     saveSerial.isEasyModeCompleted = true;
                 }
+                if (saveSerial.difficulty == "medium")
+                {
+                    saveSerial.isMediumModeCompleted = true;
+                }
+                if (saveSerial.difficulty == "hard")
+                {
+                    saveSerial.isHardModeCompleted = true;
+                }
+                if (saveSerial.difficulty == "hardcore")
+                {
+                    saveSerial.isHardcoreModeCompleted = true;
+                }
             }
             saveSerial.success[0] = false;
             saveSerial.success[1] = false;
             saveSerial.success[2] = false;
+            saveSerial.success[3] = false;
+            saveSerial.success[4] = false;
             saveSerial.isItChallengeMode = false;
             saveSerial.SaveData();
             SceneManager.LoadScene("MenuChallenge");
