@@ -21,6 +21,7 @@ public class SaveSerial : MonoBehaviour
     public int atWhichGameAreWe;
     public string difficulty;
     public List<bool> success;
+    public string sceneToLoad;
 
     public void SaveData()
     {
@@ -42,6 +43,7 @@ public class SaveSerial : MonoBehaviour
         data.atWhichGameAreWe = atWhichGameAreWe;
         data.difficulty = difficulty;
         data.success = success;
+        data.sceneToLoad = sceneToLoad;
         bf.Serialize(file, data);
         file.Close();
     }
@@ -72,6 +74,7 @@ public class SaveSerial : MonoBehaviour
             atWhichGameAreWe = data.atWhichGameAreWe;
             difficulty = data.difficulty;
             success = data.success;
+            sceneToLoad = data.sceneToLoad;
             Debug.Log("Game data loaded!");
         }
         else
@@ -96,4 +99,5 @@ class DataSaved
     public int atWhichGameAreWe;
     public string difficulty;
     public List<bool> success;
+    public string sceneToLoad;
 }
