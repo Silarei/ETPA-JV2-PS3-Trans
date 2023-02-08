@@ -76,12 +76,12 @@ public class SwipeUp : MonoBehaviour
     private void CheckListDown()
     {
         currentTime += Time.deltaTime;
-        if (currentTime - lastTimeMoved > waitTime *2)
+        if (currentTime - lastTimeMoved > waitTime *3.4)
         {
             lastTimeMoved = currentTime;
         }
 
-        else if (currentTime - lastTimeMoved > waitTime *1.5)
+        else if (currentTime - lastTimeMoved > waitTime *3)
         {
             CheckList.transform.position = Vector2.Lerp(CheckList.transform.position, checkListIdlePosition.position, 0.1f);
         }
