@@ -77,7 +77,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
-                    mainVolumeMaskPosition += slider1Value.value / 50;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x,mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -87,7 +87,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
-                    mainVolumeMaskPosition += slider2Value.value / 50;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -97,7 +97,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
-                    mainVolumeMaskPosition += slider3Value.value / 50;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -107,7 +107,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
-                    mainVolumeMaskPosition += slider4Value.value / 50;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -118,7 +118,7 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value > 15 && slidersActive[0].value < 35)
+            /*if (slidersActive[0].value > 15 && slidersActive[0].value < 35)
             {
                 Handheld.Vibrate();
             }
@@ -136,7 +136,7 @@ public class GetVolume : MonoBehaviour
             if (slidersActive[3].value > 15 && slidersActive[0].value < 35)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 15 && slidersActive[0].value < 35 && slidersActive[1].value > 15 && slidersActive[1].value < 35 && slidersActive[2].value > 15 && slidersActive[2].value < 35 && slidersActive[3].value > 15 && slidersActive[3].value < 35)
             {
@@ -157,7 +157,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
-                    mainVolumeMaskPosition += slider1Value.value / 50;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -167,7 +167,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
-                    mainVolumeMaskPosition += slider2Value.value / 50;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -177,7 +177,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
-                    mainVolumeMaskPosition += slider3Value.value / 50;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -187,7 +187,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
-                    mainVolumeMaskPosition += slider4Value.value / 50;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -198,7 +198,7 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value > 20 && slidersActive[0].value < 40)
+            /*if (slidersActive[0].value > 20 && slidersActive[0].value < 40)
             {
                 Handheld.Vibrate();
             }
@@ -211,7 +211,7 @@ public class GetVolume : MonoBehaviour
             if (slidersActive[2].value > 20 && slidersActive[0].value < 40)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 20 && slidersActive[0].value < 40 && slidersActive[1].value > 20 && slidersActive[1].value < 40 && slidersActive[2].value > 20 && slidersActive[2].value < 40)
             {
@@ -232,7 +232,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
-                    mainVolumeMaskPosition += slider1Value.value / 50;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -242,7 +242,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
-                    mainVolumeMaskPosition += slider2Value.value / 50;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -252,7 +252,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
-                    mainVolumeMaskPosition += slider3Value.value / 50;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -262,7 +262,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
-                    mainVolumeMaskPosition += slider4Value.value / 50;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -273,7 +273,7 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value > 40 && slidersActive[0].value < 60)
+            /*if (slidersActive[0].value > 40 && slidersActive[0].value < 60)
             {
                 Handheld.Vibrate();
             }
@@ -281,7 +281,7 @@ public class GetVolume : MonoBehaviour
             if (slidersActive[1].value > 40 && slidersActive[1].value < 60)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 40 && slidersActive[0].value < 60 && slidersActive[1].value > 40 && slidersActive[1].value < 60)
             {
@@ -302,7 +302,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
-                    mainVolumeMaskPosition += slider1Value.value / 50;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -312,7 +312,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
-                    mainVolumeMaskPosition += slider2Value.value / 50;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -322,7 +322,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
-                    mainVolumeMaskPosition += slider3Value.value / 50;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -332,7 +332,7 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
-                    mainVolumeMaskPosition += slider4Value.value / 50;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
                     mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
@@ -343,10 +343,10 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value == 100)
+            /*if (slidersActive[0].value == 100)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110)
             {
