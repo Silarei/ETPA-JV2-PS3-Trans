@@ -9,8 +9,6 @@ public class GamePathManager : MonoBehaviour
     public LineRenderer theLine;
     public SpriteRenderer currentHittedPiece;
     public TMP_Text instruction;
-    public SpriteRenderer cross;
-    public SpriteRenderer check;
     public TMP_Text textScore;
     public TMP_Text time;
     public GameObject panneauFin;
@@ -37,8 +35,6 @@ public class GamePathManager : MonoBehaviour
     void Start()
     {
         saveSerial.LoadData();
-        cross.color = new Color(1, 1, 1, 0);
-        check.color = new Color(1, 1, 1, 0);
         error = false;
         win = false;
         drawing = false;

@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
                 {
                     if (getVolume != null)
                     {
-                        if (getVolume.score > 15)
+                        if (getVolume.score > 4)
                         {
                             saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                         }
@@ -65,7 +65,7 @@ public class Timer : MonoBehaviour
                 {
                     if (getVolume != null)
                     {
-                        if (getVolume.score > 25)
+                        if (getVolume.score > 14)
                         {
                             saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                         }
@@ -82,14 +82,14 @@ public class Timer : MonoBehaviour
                 {
                     if (getVolume != null)
                     {
-                        if (getVolume.score > 40)
+                        if (getVolume.score > 29)
                         {
                             saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                         }
                     }
                     else
                     {
-                        if (objets.score > 5)
+                        if (objets.score > 6)
                         {
                             saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                         }
@@ -99,14 +99,14 @@ public class Timer : MonoBehaviour
                 {
                     if (getVolume != null)
                     {
-                        if (getVolume.score > 50)
+                        if (getVolume.score > 49)
                         {
                             saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                         }
                     }
                     else
                     {
-                        if (objets.score > 7)
+                        if (objets.score > 9)
                         {
                             saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                         }

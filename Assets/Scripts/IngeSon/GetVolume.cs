@@ -44,6 +44,7 @@ public class GetVolume : MonoBehaviour
     public SpriteRenderer spotBleuSR;
     public SpriteRenderer spotRougeSR;
     public SpriteRenderer spotVertSR;
+
     public SpriteRenderer spotVioletSR;
 
     public Timer gameOver;
