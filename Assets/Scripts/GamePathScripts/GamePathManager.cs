@@ -83,28 +83,28 @@ public class GamePathManager : MonoBehaviour
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (score > 10)
+                    if (score > 4)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "medium")
                 {
-                    if (score > 15)
+                    if (score > 9)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hard")
                 {
-                    if (score > 20)
+                    if (score > 19)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hardcore")
                 {
-                    if (score > 25)
+                    if (score > 24)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
@@ -122,7 +122,7 @@ public class GamePathManager : MonoBehaviour
             }
             else
             {
-                if (score > 10)
+                if (score > 4)
                 {
                     saveSerial.isGame5Unlocked = true;
                     saveSerial.SaveData();

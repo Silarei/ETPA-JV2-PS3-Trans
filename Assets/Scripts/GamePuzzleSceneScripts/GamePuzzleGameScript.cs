@@ -65,28 +65,28 @@ public class GamePuzzleGameScript : MonoBehaviour
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (score > 0)
+                    if (score > 1)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "medium")
                 {
-                    if (score > 1)
+                    if (score > 3)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hard")
                 {
-                    if (score > 2)
+                    if (score > 6)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hardcore")
                 {
-                    if (score > 3)
+                    if (score > 9)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
@@ -104,7 +104,7 @@ public class GamePuzzleGameScript : MonoBehaviour
             }
             else
             {
-                if (currentTime < 50)
+                if (score > 1)
                 {
                     saveSerial.isGame4Unlocked = true;
                     saveSerial.SaveData();
