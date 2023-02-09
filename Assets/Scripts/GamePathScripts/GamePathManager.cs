@@ -23,6 +23,8 @@ public class GamePathManager : MonoBehaviour
     private SpriteRenderer point2;
     private bool point1Check;
     private bool point2Check;
+    private SpriteRenderer oldPoint1;
+    private SpriteRenderer oldPoint2;
     private bool end;
 
     private float currentTime;
@@ -51,6 +53,9 @@ public class GamePathManager : MonoBehaviour
             point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
         }
 
+        oldPoint1 = point1;
+        oldPoint2 = point2;
+
         point1Check = false;
         point2Check = false;
 
@@ -78,28 +83,28 @@ public class GamePathManager : MonoBehaviour
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (score > 10)
+                    if (score > 4)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "medium")
                 {
-                    if (score > 15)
+                    if (score > 9)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hard")
                 {
-                    if (score > 20)
+                    if (score > 19)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hardcore")
                 {
-                    if (score > 25)
+                    if (score > 24)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
@@ -117,7 +122,7 @@ public class GamePathManager : MonoBehaviour
             }
             else
             {
-                if (score > 10)
+                if (score > 4)
                 {
                     saveSerial.isGame5Unlocked = true;
                     saveSerial.SaveData();
@@ -128,6 +133,8 @@ public class GamePathManager : MonoBehaviour
 
         if (Input.touchCount >= 1 && !error && !win && !end)
         {
+            theLine.startColor = new Color(1, 1, 1, 1);
+            theLine.endColor = new Color(1, 1, 1, 1);
             var tempPosition = Input.touches[0].position;
             var screenPos = new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane - Camera.main.transform.position.z);
             var newPos = Camera.main.ScreenToWorldPoint(screenPos);
@@ -151,7 +158,7 @@ public class GamePathManager : MonoBehaviour
                currentHittedPiece = hit.collider.GetComponent<SpriteRenderer>();
             }
         }
-        else
+        else if (!win && !error)
         {
             theLine.positionCount = 0;
             indexLine = 0;
@@ -173,9 +180,6 @@ public class GamePathManager : MonoBehaviour
             }
             else
             {
-                theLine.positionCount = 0;
-                indexLine = 0;
-                drawing = false;
                 error = true;
                 point1Check = false;
                 point2Check = false;
@@ -189,12 +193,20 @@ public class GamePathManager : MonoBehaviour
             point1 = gameObjectList[Mathf.RoundToInt(randPoint)];
             randPoint = Random.Range(0.51f, 6.5f);
             point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
-            while (point1 == point2 || point2 == null)
+            while (point1 == null || point1 == oldPoint2 || point1 == oldPoint1)
+            {
+                randPoint = Random.Range(0.51f, 6.5f);
+                point1 = gameObjectList[Mathf.RoundToInt(randPoint)];
+            }
+            while (point1 == point2 || point2 == null || point2 == oldPoint2 || point2 == oldPoint1)
             {
                 randPoint = Random.Range(0.51f, 6.5f);
                 point2 = gameObjectList[Mathf.RoundToInt(randPoint)];
             }
 
+            oldPoint1 = point1;
+            oldPoint2 = point2;
+            
             point1Check = false;
             point2Check = false;
 
@@ -208,27 +220,37 @@ public class GamePathManager : MonoBehaviour
 
         if (error && currentTime - timer < 1)
         {
-            cross.color = new Color(1, 1, 1, (currentTime - timer)*2);
+            theLine.startColor = new Color(1, 0, 0, 1);
+            theLine.endColor = new Color(1, 0, 0, 1);
         }
         if (error && currentTime - timer >= 1 && currentTime - timer < 2)
         {
-            cross.color = new Color(1, 1, 1, 1 - (currentTime - (timer + 1))*2);
+            theLine.startColor = new Color(1, 0, 0, 1 - (currentTime - (timer + 1))*2);
+            theLine.endColor = new Color(1, 0, 0, 1 - (currentTime - (timer + 1))*2);
         }
         if (error && currentTime - timer >2)
         {
+            theLine.positionCount = 0;
+            indexLine = 0;
+            drawing = false;
             error = false;
         }
 
         if (win && currentTime - timer < 1)
         {
-            check.color = new Color(1, 1, 1, (currentTime - timer) * 2);
+            theLine.startColor = new Color(0, 1, 0, 1);
+            theLine.endColor = new Color(0, 1, 0, 1);
         }
         if (win && currentTime - timer >= 1 && currentTime - timer < 2)
         {
-            check.color = new Color(1, 1, 1, 1 - (currentTime - (timer + 1)) * 2);
+            theLine.startColor = new Color(0, 1, 0, 1 - (currentTime - (timer + 1)) * 2);
+            theLine.endColor = new Color(0, 1, 0, 1 - (currentTime - (timer + 1)) * 2);
         }
         if (win && currentTime - timer > 2)
         {
+            theLine.positionCount = 0;
+            indexLine = 0;
+            drawing = false;
             win = false;
         }
     }

@@ -110,7 +110,40 @@ public class Unlocker : MonoBehaviour
                     bruh.color = new Color(1f, 1f, 1f, 0.2f);
                 }
             }
-            else if (item.name == "")
+            else if (item.name == "MENU_Challenge_Medal_Iron")
+            {
+                if (saveSerial.isEasyModeCompleted)
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 1f);
+                }
+                else
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 0f);
+                }
+            }
+            else if (item.name == "MENU_Challenge_Medal_Copper")
+            {
+                if (saveSerial.isMediumModeCompleted)
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 1f);
+                }
+                else
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 0f);
+                }
+            }
+            else if (item.name == "MENU_Challenge_Medal_Gold")
+            {
+                if (saveSerial.isHardModeCompleted)
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 1f);
+                }
+                else
+                {
+                    bruh.color = new Color(1f, 1f, 1f, 0f);
+                }
+            }
+            else if (item.name == "MENU_Challenge_Medal_Diamond")
             {
                 if (saveSerial.isHardcoreModeCompleted)
                 {
@@ -118,7 +151,7 @@ public class Unlocker : MonoBehaviour
                 }
                 else
                 {
-                    bruh.color = new Color(1f, 1f, 1f, 0.4f);
+                    bruh.color = new Color(1f, 1f, 1f, 0f);
                 }
             }
         }

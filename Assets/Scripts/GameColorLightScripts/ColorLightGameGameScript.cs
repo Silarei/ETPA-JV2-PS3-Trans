@@ -50,28 +50,28 @@ public class ColorLightGameGameScript : MonoBehaviour
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (score > 10)
+                    if (score > 4)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 if (difficulty == "medium")
                 {
-                    if (score > 20)
+                    if (score > 14)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 if (difficulty == "hard")
                 {
-                    if (score > 30)
+                    if (score > 29)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 if (difficulty == "hardcore")
                 {
-                    if (score > 55)
+                    if (score > 54)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
@@ -89,7 +89,7 @@ public class ColorLightGameGameScript : MonoBehaviour
             }
             else
             {
-                if (score > 10)
+                if (score > 4)
                 {
                     saveSerial.isGame2Unlocked = true;
                     saveSerial.SaveData();
