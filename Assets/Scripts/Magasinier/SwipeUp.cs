@@ -29,7 +29,7 @@ public class SwipeUp : MonoBehaviour
     void Update()
     {
         
-        Debug.Log(currentTime);
+        
         if (CheckList.transform.position != checkListPosition.transform.position && isCheckListUp)
         {
             CheckListUp();

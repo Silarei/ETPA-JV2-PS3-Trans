@@ -13,6 +13,8 @@ public class GetVolume : MonoBehaviour
     public bool rougeOn = false;
     public GameObject spotVert;
     public bool vertOn = false;
+    public GameObject spotViolet;
+    public bool violetOn = false;
 
     public Transform mainVolumeMask;
     private float mainVolumeMaskPosition;
@@ -30,6 +32,7 @@ public class GetVolume : MonoBehaviour
     public List<Slider> slidersActive;
 
     public TMP_Text textScore;
+    public TMP_Text textFinalScore;
 
     public bool win = false;
     public int score = 0;
@@ -41,7 +44,10 @@ public class GetVolume : MonoBehaviour
     public SpriteRenderer spotBleuSR;
     public SpriteRenderer spotRougeSR;
     public SpriteRenderer spotVertSR;
-    
+
+    public SpriteRenderer spotVioletSR;
+
+    public Timer gameOver;
 
 
     // Start is called before the first frame update
@@ -56,6 +62,7 @@ public class GetVolume : MonoBehaviour
         spotBleuSR = spotBleu.GetComponent<SpriteRenderer>();
         spotRougeSR = spotRouge.GetComponent<SpriteRenderer>();
         spotVertSR = spotVert.GetComponent<SpriteRenderer>();
+        spotVioletSR = spotViolet.GetComponent<SpriteRenderer>();
 
         mainVolumeMaskPosition = mainVolumeMask.position.y;
         mainVolumeMaskOriginPosition = mainVolumeMask.position.y;
@@ -359,6 +366,7 @@ public class GetVolume : MonoBehaviour
         {
             score++;
             textScore.text = "" + score;
+            textFinalScore.text = "" + score;
             StartCoroutine(SpotLight());
             win = false;
             slidersList = false;
@@ -379,7 +387,12 @@ public class GetVolume : MonoBehaviour
 
         }
 
-        
+        if (gameOver.gameOver == true)
+        {
+            textFinalScore.enabled = true;
+        }
+
+
 
     }
 
@@ -398,7 +411,7 @@ public class GetVolume : MonoBehaviour
     public IEnumerator SpotLight()
     {
 
-        int i = Random.Range(1, 4);
+        int i = Random.Range(1, 7);
 
         if ( i == 1)
         {
@@ -432,6 +445,42 @@ public class GetVolume : MonoBehaviour
             spotRougeSR.enabled = true;
             yield return new WaitForSeconds(0.15f);
             spotRougeSR.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            StopCoroutine(SpotLight());
+        }
+
+        if (i == 4)
+        {
+            spotVertSR.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+            spotVertSR.enabled = false;
+            spotVioletSR.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+            spotVioletSR.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            StopCoroutine(SpotLight());
+        }
+
+        if (i == 5)
+        {
+            spotBleuSR.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+            spotBleuSR.enabled = false;
+            spotVioletSR.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+            spotVioletSR.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            StopCoroutine(SpotLight());
+        }
+
+        if (i == 6)
+        {
+            spotRougeSR.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+            spotRougeSR.enabled = false;
+            spotVioletSR.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+            spotVioletSR.enabled = false;
             yield return new WaitForSeconds(0.15f);
             StopCoroutine(SpotLight());
         }

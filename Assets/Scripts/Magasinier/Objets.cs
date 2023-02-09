@@ -20,12 +20,24 @@ public class Objets : MonoBehaviour
     public CheckList checkList;
     public SwipeUp swipeUp;
 
+    public Transform rightCurtain;
+    public Transform rightCurtainOpenPosition;
+    private Vector2 rightCurtainClose;
+    private bool rightCurtainOpen = false;
+    public Transform leftCurtain;
+    public Transform leftCurtainOpenPosition;
+    private Vector2 leftCurtainClose;
+    private bool leftCurtainOpen = false;
+
+    private bool coroutineStarted = false;
+
     public TMP_Text nbProjosText;
     public TMP_Text nbMicrosText;
     public TMP_Text nbEnceintesText;
     public TMP_Text nbSynthesText;
 
     public TMP_Text textScore;
+    public TMP_Text textFinalScore;
     public int score;
 
     public string nbSynthetizers;
@@ -34,12 +46,17 @@ public class Objets : MonoBehaviour
     public string nbProjecteurs;
 
     public bool win = false;
+    public Timer gameOver;
 
     
     void Start()
     {
         RandomizeObject();
         checkListImage = GetComponent<CanvasGroup>();
+        rightCurtainClose = rightCurtain.transform.position;
+        leftCurtainClose = leftCurtain.transform.position;
+        rightCurtainOpen = true;
+        leftCurtainOpen = true;
 
     }
 
@@ -47,7 +64,24 @@ public class Objets : MonoBehaviour
     void Update()
     {
 
+        if (rightCurtainOpen && leftCurtainOpen)
+        {
+            OpenCurtain();
+        }
+
+        if (!rightCurtainOpen && !leftCurtainOpen)
+        {
+            CloseCurtain();
+            if (!coroutineStarted)
+            {
+                StartCoroutine(CurtainWaitingTime());
+                coroutineStarted = true;
+            }
+            
+        }
+
         textScore.text = "" + score;
+        textFinalScore.text = "" + score;
 
         if (nbSynthetizers == nbSynthesText.text && nbEnceintes == nbEnceintesText.text && nbMicros == nbMicrosText.text && nbProjecteurs == nbProjosText.text)
         {
@@ -70,10 +104,18 @@ public class Objets : MonoBehaviour
             nbMicrosText.text = "0";
             nbEnceintesText.text = "0";
             nbSynthesText.text = "0";
-            RandomizeObject();
+
+            rightCurtainOpen = false;
+            leftCurtainOpen = false;
+
+            
             win = false;
         }
 
+        if (gameOver.gameOver == true)
+        {
+            textFinalScore.enabled = true;
+        }
 
 
     }
@@ -111,7 +153,7 @@ public class Objets : MonoBehaviour
         {
             synthetizerSR = synthetizersSRList[2].GetComponent<SpriteRenderer>();
             synthetizerSR.enabled = true;
-            nbSynthetizers = "3";
+            nbSynthetizers = "4";
         }
 
 
@@ -120,7 +162,7 @@ public class Objets : MonoBehaviour
         {
             enceinteSR = enceintesSRList[0].GetComponent<SpriteRenderer>();
             enceinteSR.enabled = true;
-            nbEnceintes = "2";
+            nbEnceintes = "1";
         }
 
         else if (c == 2)
@@ -159,7 +201,7 @@ public class Objets : MonoBehaviour
         {
             microSR = microsSRList[2].GetComponent<SpriteRenderer>();
             microSR.enabled = true;
-            nbMicros = "3";
+            nbMicros = "5";
         }
 
 
@@ -175,7 +217,7 @@ public class Objets : MonoBehaviour
         {
             projecteurSR = projecteursSRList[1].GetComponent<SpriteRenderer>();
             projecteurSR.enabled = true;
-            nbProjecteurs = "2";
+            nbProjecteurs = "3";
         }
 
         else
@@ -184,6 +226,35 @@ public class Objets : MonoBehaviour
             projecteurSR.enabled = true;
             nbProjecteurs = "4";
         }
+
+    }
+
+    private void OpenCurtain()
+    {
+        if (rightCurtainOpen && leftCurtainOpen)
+        {
+            rightCurtain.transform.position = Vector2.Lerp(rightCurtain.transform.position, rightCurtainOpenPosition.transform.position, 0.03f);
+            leftCurtain.transform.position = Vector2.Lerp(leftCurtain.transform.position, leftCurtainOpenPosition.transform.position, 0.03f);
+
+        }
+        
+        
+    }
+
+    private void CloseCurtain()
+    {
+        rightCurtain.transform.position = Vector2.Lerp(rightCurtain.transform.position, rightCurtainClose, 0.03f);
+        leftCurtain.transform.position = Vector2.Lerp(leftCurtain.transform.position, leftCurtainClose, 0.03f);
+    }
+
+    IEnumerator CurtainWaitingTime()
+    {
+        yield return new WaitForSeconds(1f);
+        RandomizeObject();
+        rightCurtainOpen = true;
+        leftCurtainOpen = true;
+        coroutineStarted = false;
+        StopCoroutine(CurtainWaitingTime());
 
     }
 }
