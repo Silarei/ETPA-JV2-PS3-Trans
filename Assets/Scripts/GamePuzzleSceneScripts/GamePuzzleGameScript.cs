@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class GamePuzzleGameScript : MonoBehaviour
@@ -10,6 +11,7 @@ public class GamePuzzleGameScript : MonoBehaviour
 
     public float currentTime;
     public TMP_Text timer;
+    public TMP_Text scoreText;
     private float end;
     public SaveSerial saveSerial;
 
@@ -22,84 +24,69 @@ public class GamePuzzleGameScript : MonoBehaviour
     public GameObject guitarePiece90;
     public GameObject batteriePiece;
     public GameObject batteriePiece90;
+    public GameObject batteriePiece180;
+    public GameObject guitareBoxPiece;
+    public GameObject guitareBoxPiece90;
+    public GameObject guitareBoxPiece180;
+    public GameObject pianoPiece90;
+    public GameObject hornPiece90;
 
-    private GameObject piece1;
-    private GameObject piece2;
-    private GameObject piece3;
-    private GameObject piece4;
-    private GameObject piece5;
-    private GameObject piece6;
+    private List<GameObject> piece;
+    private int score;
+    private int lastPuzzle;
+    private int aleaLevel;
 
-    public bool victory;
     // Start is called before the first frame update
     void Start()
     {
-        victory = false;
         saveSerial.LoadData();
         end = 0f;
-        var aleaLevel = Random.Range(0, 1);
-        if (aleaLevel <= 0.5f)
-        {
-            piece1 = Instantiate(batteriePiece90);
-            piece2 = Instantiate(batteriePiece, new Vector3(0.7f,0f,0), Quaternion.identity);
-            piece3 = Instantiate(microPiece, new Vector3(1.7f,-3.7f,0), Quaternion.identity);
-            piece4 = Instantiate(guitarePiece90, new Vector3(1.75f,-1.6f,0), guitarePiece90.transform.rotation);
-            piece5 = Instantiate(guitarePiece90);
-            piece6 = Instantiate(hornPiece270, new Vector3(-0.7f,-3.6f,0), hornPiece270.transform.rotation);
-        }
-        else if (aleaLevel > 0.5f)
-        {
-            piece1 = Instantiate(batteriePiece90);
-            piece2 = Instantiate(batteriePiece);
-            piece3 = Instantiate(microPiece);
-            piece4 = Instantiate(guitarePiece90);
-            piece5 = Instantiate(guitarePiece90);
-            piece6 = Instantiate(hornPiece270);
-        }
+        piece = new List<GameObject>();
+        generateNewPuzzle();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;
-
-        if (!victory) {
-            timer.text = "" + System.Math.Round(currentTime, 2);
-        }
-        if (pieceGatherer.grillePosOccupied.Count == 16 && !victory)
+        timer.text = "" + System.Math.Round(currentTime, 1);
+        
+        if (pieceGatherer.grillePosOccupied.Count == 16 && currentTime < 61)
         {
-            end = currentTime;
-            victory = true;
+            score++;
+            scoreText.text = "" + score;
+            generateNewPuzzle();
         }
-        if (currentTime - end > 5 && victory)
+        if (currentTime > 60)
         {
             if (saveSerial.isItChallengeMode)
             {
                 var difficulty = saveSerial.difficulty;
                 if (difficulty == "easy")
                 {
-                    if (currentTime < 50)
+                    if (score > 0)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "medium")
                 {
-                    if (currentTime < 40)
+                    if (score > 1)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hard")
                 {
-                    if (currentTime < 30)
+                    if (score > 2)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
                 }
                 else if (difficulty == "hardcore")
                 {
-                    if (currentTime < 20)
+                    if (score > 3)
                     {
                         saveSerial.success[saveSerial.atWhichGameAreWe] = true;
                     }
@@ -124,6 +111,48 @@ public class GamePuzzleGameScript : MonoBehaviour
                 }
                 SceneManager.LoadScene("MenuFreeGame");
             }
+        }
+    }
+
+    private void generateNewPuzzle()
+    {
+        foreach (GameObject item in piece)
+        {
+            Destroy(item);
+        }
+        piece.Clear();
+        pieceGatherer.grillePosOccupied.Clear();
+        while (aleaLevel == lastPuzzle && lastPuzzle != null)
+        {
+            aleaLevel = Random.Range(0, 3);
+        }
+
+        lastPuzzle = aleaLevel;
+        if (aleaLevel == 0)
+        {
+            piece.Add(Instantiate(batteriePiece90, new Vector3(-0.65f,-1.21f,0), batteriePiece90.transform.rotation));
+            piece.Add(Instantiate(batteriePiece, new Vector3(0.65f,-3.54f,0), Quaternion.identity));
+            piece.Add(Instantiate(microPiece, new Vector3(0.48f,-0.5f,0), Quaternion.identity));
+            piece.Add(Instantiate(guitarePiece90, new Vector3(1.65f,-1.27f,0), guitarePiece90.transform.rotation));
+            piece.Add(Instantiate(guitarePiece90, new Vector3(-1.47f,-4.2f,0), guitarePiece90.transform.rotation));
+            piece.Add(Instantiate(hornPiece270, new Vector3(1.46f,-2.45f,0), hornPiece270.transform.rotation));
+        }
+        else if (aleaLevel == 1)
+        {
+            piece.Add(Instantiate(guitareBoxPiece, new Vector3(-1.55f,-2.28f,0), guitareBoxPiece.transform.rotation));
+            piece.Add(Instantiate(guitareBoxPiece180, new Vector3(1.57f,-2.77f,0), guitareBoxPiece180.transform.rotation));
+            piece.Add(Instantiate(microPiece, new Vector3(1.12f,-0.52f,0), microPiece.transform.rotation));
+            piece.Add(Instantiate(microPiece, new Vector3(0.56f,-3.23f,0), microPiece.transform.rotation));
+            piece.Add(Instantiate(pianoPiece90, new Vector3(-0.7f,-4.39f,0), pianoPiece90.transform.rotation));
+            piece.Add(Instantiate(hornPiece90, new Vector3(-1.35f,-0.19f,0), hornPiece90.transform.rotation));
+        }
+        else
+        {
+            piece.Add(Instantiate(guitarePiece, new Vector3(0.77f,-3.4f,0), guitarePiece.transform.rotation));
+            piece.Add(Instantiate(guitareBoxPiece90, new Vector3(-0.57f,-2.4f,0), guitareBoxPiece90.transform.rotation));
+            piece.Add(Instantiate(batteriePiece180, new Vector3(-0.35f,-4.49f,0), batteriePiece180.transform.rotation));
+            piece.Add(Instantiate(hornPiece90, new Vector3(-1.52f,-0.3f,0), hornPiece90.transform.rotation));
+            piece.Add(Instantiate(hornPiece90, new Vector3(0.71f,-0.3f,0), hornPiece90.transform.rotation));
         }
     }
 }

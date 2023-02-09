@@ -133,6 +133,8 @@ public class GamePathManager : MonoBehaviour
 
         if (Input.touchCount >= 1 && !error && !win && !end)
         {
+            theLine.startColor = new Color(1, 1, 1, 1);
+            theLine.endColor = new Color(1, 1, 1, 1);
             var tempPosition = Input.touches[0].position;
             var screenPos = new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane - Camera.main.transform.position.z);
             var newPos = Camera.main.ScreenToWorldPoint(screenPos);
@@ -156,7 +158,7 @@ public class GamePathManager : MonoBehaviour
                currentHittedPiece = hit.collider.GetComponent<SpriteRenderer>();
             }
         }
-        else
+        else if (!win && !error)
         {
             theLine.positionCount = 0;
             indexLine = 0;
@@ -178,9 +180,6 @@ public class GamePathManager : MonoBehaviour
             }
             else
             {
-                theLine.positionCount = 0;
-                indexLine = 0;
-                drawing = false;
                 error = true;
                 point1Check = false;
                 point2Check = false;
@@ -221,27 +220,37 @@ public class GamePathManager : MonoBehaviour
 
         if (error && currentTime - timer < 1)
         {
-            cross.color = new Color(1, 1, 1, (currentTime - timer)*2);
+            theLine.startColor = new Color(1, 0, 0, 1);
+            theLine.endColor = new Color(1, 0, 0, 1);
         }
         if (error && currentTime - timer >= 1 && currentTime - timer < 2)
         {
-            cross.color = new Color(1, 1, 1, 1 - (currentTime - (timer + 1))*2);
+            theLine.startColor = new Color(1, 0, 0, 1 - (currentTime - (timer + 1))*2);
+            theLine.endColor = new Color(1, 0, 0, 1 - (currentTime - (timer + 1))*2);
         }
         if (error && currentTime - timer >2)
         {
+            theLine.positionCount = 0;
+            indexLine = 0;
+            drawing = false;
             error = false;
         }
 
         if (win && currentTime - timer < 1)
         {
-            check.color = new Color(1, 1, 1, (currentTime - timer) * 2);
+            theLine.startColor = new Color(0, 1, 0, 1);
+            theLine.endColor = new Color(0, 1, 0, 1);
         }
         if (win && currentTime - timer >= 1 && currentTime - timer < 2)
         {
-            check.color = new Color(1, 1, 1, 1 - (currentTime - (timer + 1)) * 2);
+            theLine.startColor = new Color(0, 1, 0, 1 - (currentTime - (timer + 1)) * 2);
+            theLine.endColor = new Color(0, 1, 0, 1 - (currentTime - (timer + 1)) * 2);
         }
         if (win && currentTime - timer > 2)
         {
+            theLine.positionCount = 0;
+            indexLine = 0;
+            drawing = false;
             win = false;
         }
     }

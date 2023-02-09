@@ -18,7 +18,7 @@ public class PieceGatherer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gPGS.victory)
+        if (gPGS.currentTime < 61)
         {
             if (Input.touchCount >= 1)
             {

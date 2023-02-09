@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3411700748418772954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.73, y: -0.357, z: 0}
-  m_LocalScale: {x: 0.1075, y: 0.115, z: 1}
+  m_LocalScale: {x: 0.145, y: 0.135, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dc472c923122a848922cf50f9b35040, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 925512ff68ac1f44a879cf18458b7e64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 28.791622, y: 27.920002}
+  m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,27 +125,27 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 28.791622, y: 27.920002}
-    newSize: {x: 28.791622, y: 27.920002}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 20.48, y: 20.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.375, y: 1.175}
-      - {x: 3.365, y: 1.185}
-      - {x: 3.225, y: 1.185}
-      - {x: 3.175, y: 1.165}
-      - {x: -3.145, y: 1.155}
-      - {x: -3.215, y: 1.185}
-      - {x: -3.3149998, y: 1.185}
-      - {x: -3.375, y: 1.135}
-      - {x: -3.375, y: -1.185}
-      - {x: -1.1522131, y: -1.1246109}
-      - {x: -1.1949999, y: -3.215}
-      - {x: -1.165, y: -3.375}
-      - {x: 1.169454, y: -3.375}
-      - {x: 1.175, y: -1.125}
-      - {x: 3.2549999, y: -1.185}
-      - {x: 3.375, y: -1.155}
+    - - {x: 10.242705, y: -1.2275915}
+      - {x: 10.247758, y: 0.9077779}
+      - {x: 10.233883, y: 1.9214405}
+      - {x: 10.229039, y: 3.4615374}
+      - {x: 3.4718046, y: 3.4847152}
+      - {x: -2.38768, y: 3.467529}
+      - {x: -3.5101776, y: 3.4534957}
+      - {x: -10.231516, y: 3.4670615}
+      - {x: -10.155333, y: -3.5170622}
+      - {x: -3.5431116, y: -3.537754}
+      - {x: -3.5403845, y: -3.5456235}
+      - {x: -3.5493703, y: -10.2376795}
+      - {x: 3.449195, y: -10.243467}
+      - {x: 3.4605052, y: -3.5798016}
+      - {x: 7.229128, y: -3.5606856}
+      - {x: 10.238581, y: -3.5377624}
