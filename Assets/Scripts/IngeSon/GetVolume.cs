@@ -41,6 +41,7 @@ public class GetVolume : MonoBehaviour
     public SpriteRenderer spotBleuSR;
     public SpriteRenderer spotRougeSR;
     public SpriteRenderer spotVertSR;
+    
 
 
     // Start is called before the first frame update
