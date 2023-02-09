@@ -14,7 +14,9 @@ public class GetVolume : MonoBehaviour
     public GameObject spotVert;
     public bool vertOn = false;
 
-
+    public Transform mainVolumeMask;
+    private float mainVolumeMaskPosition;
+    private float mainVolumeMaskOriginPosition;
     public Slider generalValue;
     public GameObject slider1;
     public Slider slider1Value;
@@ -54,6 +56,9 @@ public class GetVolume : MonoBehaviour
         spotRougeSR = spotRouge.GetComponent<SpriteRenderer>();
         spotVertSR = spotVert.GetComponent<SpriteRenderer>();
 
+        mainVolumeMaskPosition = mainVolumeMask.position.y;
+        mainVolumeMaskOriginPosition = mainVolumeMask.position.y;
+
     }
 
     // Update is called once per frame
@@ -65,11 +70,15 @@ public class GetVolume : MonoBehaviour
         {
             generalValue.value = 0;
 
+            mainVolumeMaskPosition = mainVolumeMaskOriginPosition;
+
             foreach (GameObject n in artistesOnScene)
             {
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x,mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider1Value);
@@ -78,6 +87,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider2Value);
@@ -86,6 +97,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider3Value);
@@ -94,6 +107,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider4Value);
@@ -103,7 +118,7 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value > 15 && slidersActive[0].value < 35)
+            /*if (slidersActive[0].value > 15 && slidersActive[0].value < 35)
             {
                 Handheld.Vibrate();
             }
@@ -121,7 +136,7 @@ public class GetVolume : MonoBehaviour
             if (slidersActive[3].value > 15 && slidersActive[0].value < 35)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 15 && slidersActive[0].value < 35 && slidersActive[1].value > 15 && slidersActive[1].value < 35 && slidersActive[2].value > 15 && slidersActive[2].value < 35 && slidersActive[3].value > 15 && slidersActive[3].value < 35)
             {
@@ -135,11 +150,15 @@ public class GetVolume : MonoBehaviour
         {
             generalValue.value = 0;
 
+            mainVolumeMaskPosition = mainVolumeMaskOriginPosition;
+
             foreach (GameObject n in artistesOnScene)
             {
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider1Value);
@@ -148,6 +167,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider2Value);
@@ -156,6 +177,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider3Value);
@@ -164,6 +187,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider4Value);
@@ -173,7 +198,7 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value > 20 && slidersActive[0].value < 40)
+            /*if (slidersActive[0].value > 20 && slidersActive[0].value < 40)
             {
                 Handheld.Vibrate();
             }
@@ -186,7 +211,7 @@ public class GetVolume : MonoBehaviour
             if (slidersActive[2].value > 20 && slidersActive[0].value < 40)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 20 && slidersActive[0].value < 40 && slidersActive[1].value > 20 && slidersActive[1].value < 40 && slidersActive[2].value > 20 && slidersActive[2].value < 40)
             {
@@ -200,12 +225,15 @@ public class GetVolume : MonoBehaviour
         {
             generalValue.value = 0;
 
+            mainVolumeMaskPosition = mainVolumeMaskOriginPosition;
 
             foreach (GameObject n in artistesOnScene)
             {
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider1Value);
@@ -214,6 +242,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider2Value);
@@ -222,6 +252,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider3Value);
@@ -230,6 +262,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider4Value);
@@ -239,7 +273,7 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value > 40 && slidersActive[0].value < 60)
+            /*if (slidersActive[0].value > 40 && slidersActive[0].value < 60)
             {
                 Handheld.Vibrate();
             }
@@ -247,7 +281,7 @@ public class GetVolume : MonoBehaviour
             if (slidersActive[1].value > 40 && slidersActive[1].value < 60)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110 && slidersActive[0].value > 40 && slidersActive[0].value < 60 && slidersActive[1].value > 40 && slidersActive[1].value < 60)
             {
@@ -261,11 +295,15 @@ public class GetVolume : MonoBehaviour
         {
             generalValue.value = 0;
 
+            mainVolumeMaskPosition = mainVolumeMaskOriginPosition;
+
             foreach (GameObject n in artistesOnScene)
             {
                 if (n == musiciens.artistes[0])
                 {
                     generalValue.value += slider1Value.value;
+                    mainVolumeMaskPosition += slider1Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider1Value);
@@ -274,6 +312,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[1])
                 {
                     generalValue.value += slider2Value.value;
+                    mainVolumeMaskPosition += slider2Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider2Value);
@@ -282,6 +322,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[2])
                 {
                     generalValue.value += slider3Value.value;
+                    mainVolumeMaskPosition += slider3Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider3Value);
@@ -290,6 +332,8 @@ public class GetVolume : MonoBehaviour
                 if (n == musiciens.artistes[3])
                 {
                     generalValue.value += slider4Value.value;
+                    mainVolumeMaskPosition += slider4Value.value / 60;
+                    mainVolumeMask.position = new Vector2(mainVolumeMask.position.x, mainVolumeMaskPosition);
                     if (slidersList == false)
                     {
                         slidersActive.Add(slider4Value);
@@ -299,10 +343,10 @@ public class GetVolume : MonoBehaviour
 
             slidersList = true;
 
-            if (slidersActive[0].value == 100)
+            /*if (slidersActive[0].value == 100)
             {
                 Handheld.Vibrate();
-            }
+            }*/
 
             if (generalValue.value > 90 && generalValue.value < 110)
             {
@@ -329,8 +373,9 @@ public class GetVolume : MonoBehaviour
             slider2Value.value = 0;
             slider3Value.value = 0;
             slider4Value.value = 0;
-            
- 
+
+            mainVolumeMaskPosition = mainVolumeMaskOriginPosition;
+
         }
 
         
@@ -351,14 +396,44 @@ public class GetVolume : MonoBehaviour
 
     public IEnumerator SpotLight()
     {
-        spotRougeSR.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        spotRougeSR.enabled = false;
-        spotBleuSR.enabled = true;
-        spotVertSR.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        spotBleuSR.enabled = false;
-        spotVertSR.enabled = false;
+
+        int i = Random.Range(1, 4);
+
+        if ( i == 1)
+        {
+            spotBleuSR.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+            spotBleuSR.enabled = false;
+            spotVertSR.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+            spotVertSR.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            StopCoroutine(SpotLight());
+        }
+
+        if (i == 2)
+        {
+            spotBleuSR.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+            spotBleuSR.enabled = false;
+            spotRougeSR.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+            spotRougeSR.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            StopCoroutine(SpotLight());
+        }
+
+        if (i == 3)
+        {
+            spotVertSR.enabled = true;
+            yield return new WaitForSeconds(0.2f);
+            spotVertSR.enabled = false;
+            spotRougeSR.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+            spotRougeSR.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            StopCoroutine(SpotLight());
+        }
 
     }
     

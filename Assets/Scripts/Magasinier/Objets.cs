@@ -18,6 +18,7 @@ public class Objets : MonoBehaviour
     private SpriteRenderer projecteurSR;
     public CanvasGroup checkListImage;
     public CheckList checkList;
+    public SwipeUp swipeUp;
 
     public TMP_Text nbProjosText;
     public TMP_Text nbMicrosText;
@@ -53,7 +54,6 @@ public class Objets : MonoBehaviour
             win = true;
             score++;
 
-            Debug.Log("Gagne");
         }
 
         if (win == true)
@@ -63,8 +63,7 @@ public class Objets : MonoBehaviour
             enceinteSR.enabled = false;
             microSR.enabled = false;
             projecteurSR.enabled = false;
-            checkList.isActive = false;
-            checkListImage.alpha = 0;
+            swipeUp.isCheckListUp = false;
             checkListImage.interactable = false;
 
             nbProjosText.text = "0";

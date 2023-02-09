@@ -8,16 +8,15 @@ public class CheckList : MonoBehaviour
 
     public Timer timer;
 
-    public GameObject listButton;
     public CheckList checkList;
     public CanvasGroup checkListImage;
+    public SwipeUp swipeUp;
 
     public TMP_Text nbProjos;
     public TMP_Text nbMicros;
     public TMP_Text nbEnceintes;
     public TMP_Text nbSynthes;
 
-    public bool isActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +27,10 @@ public class CheckList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (isActive == true)
+       if (swipeUp.isCheckListUp == true)
        {
-            checkListImage.alpha = 1;
             checkListImage.interactable = true;
+            checkListImage.blocksRaycasts = true;
             nbProjos.enabled = true;
             nbMicros.enabled = true;
             nbEnceintes.enabled = true;
@@ -41,8 +40,8 @@ public class CheckList : MonoBehaviour
 
         else
         {
-            checkListImage.alpha = 0;
             checkListImage.interactable = false;
+            checkListImage.blocksRaycasts = false;
             nbProjos.enabled = false;
             nbMicros.enabled = false;
             nbEnceintes.enabled = false;
@@ -51,24 +50,12 @@ public class CheckList : MonoBehaviour
 
         if (timer.gameOver == true)
         {
-            isActive = false;
+            swipeUp.isCheckListUp = false;
             
         }
 
     }
 
-    public void CheckListVisible()
-    {
-        if (isActive)
-        {
-            isActive = false;
-        }
-
-        else
-        {
-            isActive = true;
-        }
-    }
 
     
 }
