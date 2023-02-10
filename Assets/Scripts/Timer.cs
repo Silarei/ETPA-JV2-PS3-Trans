@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public TMP_Text time;
     public float currentTime;
     public GameObject panneauFin;
-    public SpriteRenderer panneauSR;
+    public CanvasGroup panneauSR;
     public SaveSerial saveSerial;
     public GetVolume getVolume;
     public Objets objets;
@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        panneauSR = panneauFin.GetComponent<SpriteRenderer>();
+        panneauSR = panneauFin.GetComponent<CanvasGroup>();
         saveSerial.LoadData();
     }
 
@@ -31,7 +31,8 @@ public class Timer : MonoBehaviour
         if (currentTime > 60 && !gameOver)
         {
             gameOver = true;
-            panneauSR.enabled = true;
+            panneauSR.alpha = 1;
+            panneauSR.blocksRaycasts = true;
         }
 
         else if (!gameOver)
