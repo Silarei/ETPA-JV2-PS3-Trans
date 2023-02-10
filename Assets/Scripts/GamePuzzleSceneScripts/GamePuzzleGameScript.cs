@@ -19,6 +19,7 @@ public class GamePuzzleGameScript : MonoBehaviour
     public GameObject pianoPiece;
     public GameObject microPiece;
     public GameObject hornPiece;
+    public GameObject hornPiece180;
     public GameObject hornPiece270;
     public GameObject guitarePiece;
     public GameObject guitarePiece90;
@@ -124,7 +125,7 @@ public class GamePuzzleGameScript : MonoBehaviour
         pieceGatherer.grillePosOccupied.Clear();
         while (aleaLevel == lastPuzzle && lastPuzzle != null)
         {
-            aleaLevel = Random.Range(0, 3);
+            aleaLevel = Random.Range(0, 6);
         }
 
         lastPuzzle = aleaLevel;
@@ -145,6 +146,34 @@ public class GamePuzzleGameScript : MonoBehaviour
             piece.Add(Instantiate(microPiece, new Vector3(0.56f,-3.23f,0), microPiece.transform.rotation));
             piece.Add(Instantiate(pianoPiece90, new Vector3(-0.7f,-4.39f,0), pianoPiece90.transform.rotation));
             piece.Add(Instantiate(hornPiece90, new Vector3(-1.35f,-0.19f,0), hornPiece90.transform.rotation));
+        }
+        else if (aleaLevel == 2)
+        {
+            piece.Add(Instantiate(guitarePiece90, new Vector3(-0.44f,-2.35f,0), guitarePiece90.transform.rotation));
+            piece.Add(Instantiate(guitareBoxPiece90, new Vector3(-0.57f,-0.37f,0), guitareBoxPiece90.transform.rotation));
+            piece.Add(Instantiate(guitarePiece, new Vector3(0.77f,-3.4f,0), guitarePiece.transform.rotation));
+            piece.Add(Instantiate(microPiece, new Vector3(0.66f,-2.4f,0), microPiece.transform.rotation));
+            piece.Add(Instantiate(batteriePiece180, new Vector3(-0.55f,-4.41f,0), batteriePiece180.transform.rotation));
+            piece.Add(Instantiate(hornPiece90, new Vector3(0.83f,-1.38f,0), hornPiece90.transform.rotation));
+        }
+        else if (aleaLevel == 3)
+        {
+            piece.Add(Instantiate(guitarePiece, new Vector3(-1.63f,-3.35f,0), guitarePiece.transform.rotation));
+            piece.Add(Instantiate(microPiece, new Vector3(1.59f,-0.22f,0), microPiece.transform.rotation));
+            piece.Add(Instantiate(microPiece, new Vector3(0.41f,-0.9f,0), microPiece.transform.rotation));
+            piece.Add(Instantiate(pianoPiece90, new Vector3(-0.7f,-4.39f,0), pianoPiece90.transform.rotation));
+            piece.Add(Instantiate(pianoPiece, new Vector3(1.55f,-2.44f,0), pianoPiece.transform.rotation));
+            piece.Add(Instantiate(hornPiece180, new Vector3(-1.59f,-1.22f,0), hornPiece180.transform.rotation));
+            piece.Add(Instantiate(hornPiece90, new Vector3(-0.5f,-2.01f,0), hornPiece90.transform.rotation));
+        }
+        else if (aleaLevel == 4)
+        {
+            piece.Add(Instantiate(microPiece, new Vector3(1.53f,-4.3f,0), microPiece.transform.rotation));
+            piece.Add(Instantiate(pianoPiece, new Vector3(-1.7f,-3.3f,0), pianoPiece.transform.rotation));
+            piece.Add(Instantiate(hornPiece270, new Vector3(-0.6f,-1.05f,0), hornPiece270.transform.rotation));
+            piece.Add(Instantiate(hornPiece270, new Vector3(1.75f,-1.05f,0), hornPiece270.transform.rotation));
+            piece.Add(Instantiate(hornPiece90, new Vector3(0.8f,-2.25f,0), hornPiece90.transform.rotation));
+            piece.Add(Instantiate(hornPiece, new Vector3(0.4f,-3.41f,0), hornPiece.transform.rotation));
         }
         else
         {
