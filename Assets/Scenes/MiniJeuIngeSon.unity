@@ -3422,7 +3422,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 320, y: 22}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1650871924
 CanvasRenderer:
@@ -4035,6 +4035,7 @@ MonoBehaviour:
   atWhichGameAreWe: 0
   difficulty: 
   success: 
+  sceneToLoad: 
 --- !u!4 &2113516374
 Transform:
   m_ObjectHideFlags: 0

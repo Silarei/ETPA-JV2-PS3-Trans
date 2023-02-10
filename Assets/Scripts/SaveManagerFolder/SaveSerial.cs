@@ -22,6 +22,9 @@ public class SaveSerial : MonoBehaviour
     public string difficulty;
     public List<bool> success;
     public string sceneToLoad;
+    public int bestScore;
+    public int lastScore;
+    public bool isScoreCheckerOpen;
 
     public void SaveData()
     {
@@ -44,6 +47,9 @@ public class SaveSerial : MonoBehaviour
         data.difficulty = difficulty;
         data.success = success;
         data.sceneToLoad = sceneToLoad;
+        data.bestScore = bestScore;
+        data.lastScore = lastScore;
+        data.isScoreCheckerOpen = isScoreCheckerOpen;
         bf.Serialize(file, data);
         file.Close();
     }
@@ -75,6 +81,9 @@ public class SaveSerial : MonoBehaviour
             difficulty = data.difficulty;
             success = data.success;
             sceneToLoad = data.sceneToLoad;
+            bestScore = data.bestScore;
+            lastScore = data.lastScore;
+            isScoreCheckerOpen = data.isScoreCheckerOpen;
             Debug.Log("Game data loaded!");
         }
         else
@@ -100,4 +109,7 @@ class DataSaved
     public string difficulty;
     public List<bool> success;
     public string sceneToLoad;
+    public int bestScore;
+    public int lastScore;
+    public bool isScoreCheckerOpen;
 }

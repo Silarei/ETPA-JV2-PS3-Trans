@@ -14,6 +14,10 @@ public class GamePuzzleGameScript : MonoBehaviour
     public TMP_Text scoreText;
     private float end;
     public SaveSerial saveSerial;
+    public GameObject panneauFin;
+    public TMP_Text textFinalScore;
+    
+    private CanvasGroup panneauSR;
 
     public GameObject saxoPiece;
     public GameObject pianoPiece;
@@ -40,6 +44,7 @@ public class GamePuzzleGameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panneauSR = panneauFin.GetComponent<CanvasGroup>();
         saveSerial.LoadData();
         end = 0f;
         piece = new List<GameObject>();
@@ -60,6 +65,37 @@ public class GamePuzzleGameScript : MonoBehaviour
             generateNewPuzzle();
         }
         if (currentTime > 60)
+        {
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    textFinalScore.text = "" + (1000 * (score / 2));
+                }
+                else if (difficulty == "medium")
+                {
+                    textFinalScore.text = "" + (2000 * (score / 4));
+                }
+                else if (difficulty == "hard")
+                {
+                    textFinalScore.text = "" + (4000 * (score / 7));
+                }
+                else if (difficulty == "hardcore")
+                {
+                    textFinalScore.text = "" + (10000 * (score / 10));
+                }
+            }
+            else
+            {
+                textFinalScore.text = "" + (1000 * (score / 2));
+            }
+
+            panneauSR.alpha = 1;
+            panneauSR.blocksRaycasts = true;
+            textFinalScore.enabled = true;
+        }
+        if (currentTime > 65)
         {
             if (saveSerial.isItChallengeMode)
             {
@@ -93,13 +129,20 @@ public class GamePuzzleGameScript : MonoBehaviour
                     }
                 }
                 saveSerial.atWhichGameAreWe++;
+                saveSerial.lastScore += int.Parse(textFinalScore.text);
                 saveSerial.SaveData();
                 if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
                 { 
                     SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
                 }
                 else
-                { 
+                {
+                    if (saveSerial.lastScore > saveSerial.bestScore)
+                    {
+                        saveSerial.bestScore = saveSerial.lastScore;
+                    }
+                    saveSerial.isScoreCheckerOpen = true;
+                    saveSerial.SaveData();
                     SceneManager.LoadScene("MenuChallenge");
                 }
             }

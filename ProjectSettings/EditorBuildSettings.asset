@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Magasinier.unity
     guid: c1cfc9eccd53a194d87d0c1a912474e8
+  - enabled: 1
+    path: Assets/Scenes/SceneTuto.unity
+    guid: c5486c64f802fa14b9234ebd37e81453
   m_configObjects: {}

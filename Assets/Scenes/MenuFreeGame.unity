@@ -157,9 +157,12 @@ MonoBehaviour:
   sceneToLoad: MiniJeuIngeSon
   unlocked: 0
   challenge: 0
+  scoreButton: 0
   saveSerial: {fileID: 2080558740}
   listMiniGame: []
   difficulty: 
+  mCS: {fileID: 0}
+  dS: {fileID: 0}
 --- !u!61 &445025333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -371,9 +374,12 @@ MonoBehaviour:
   sceneToLoad: Magasinier
   unlocked: 0
   challenge: 0
+  scoreButton: 0
   saveSerial: {fileID: 2080558740}
   listMiniGame: []
   difficulty: 
+  mCS: {fileID: 0}
+  dS: {fileID: 0}
 --- !u!61 &569874883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -739,9 +745,12 @@ MonoBehaviour:
   sceneToLoad: GamePuzzleScene
   unlocked: 0
   challenge: 0
+  scoreButton: 0
   saveSerial: {fileID: 2080558740}
   listMiniGame: []
   difficulty: 
+  mCS: {fileID: 0}
+  dS: {fileID: 0}
 --- !u!61 &1116862607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -814,9 +823,12 @@ MonoBehaviour:
   sceneToLoad: MenuChallenge
   unlocked: 0
   challenge: 0
+  scoreButton: 0
   saveSerial: {fileID: 2080558740}
   listMiniGame: []
   difficulty: 
+  mCS: {fileID: 0}
+  dS: {fileID: 0}
 --- !u!1 &1253293424
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,9 +930,12 @@ MonoBehaviour:
   sceneToLoad: GameColorLight
   unlocked: 1
   challenge: 0
+  scoreButton: 0
   saveSerial: {fileID: 2080558740}
   listMiniGame: []
   difficulty: 
+  mCS: {fileID: 0}
+  dS: {fileID: 0}
 --- !u!61 &1253293428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -981,9 +996,12 @@ MonoBehaviour:
   sceneToLoad: GamePath
   unlocked: 0
   challenge: 0
+  scoreButton: 0
   saveSerial: {fileID: 2080558740}
   listMiniGame: []
   difficulty: 
+  mCS: {fileID: 0}
+  dS: {fileID: 0}
 --- !u!61 &1649682062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1122,6 +1140,9 @@ MonoBehaviour:
   difficulty: 
   success: 
   sceneToLoad: 
+  bestScore: 0
+  lastScore: 0
+  isScoreCheckerOpen: 0
 --- !u!4 &2080558741
 Transform:
   m_ObjectHideFlags: 0

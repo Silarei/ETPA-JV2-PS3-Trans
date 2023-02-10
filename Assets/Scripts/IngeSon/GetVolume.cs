@@ -366,7 +366,6 @@ public class GetVolume : MonoBehaviour
         {
             score++;
             textScore.text = "" + score;
-            textFinalScore.text = "" + score;
             StartCoroutine(SpotLight());
             win = false;
             slidersList = false;
