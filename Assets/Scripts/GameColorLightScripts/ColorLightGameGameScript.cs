@@ -14,7 +14,9 @@ public class ColorLightGameGameScript : MonoBehaviour
     public ColorLightGameColorChange cLGCC;
     public List<ButtonColorChange> bCCList;
     public SaveSerial saveSerial;
-
+    public TMP_Text textFinalScore;
+    
+    private CanvasGroup panneauSR;
     public bool end;
     private int score;
     private float red, green, blue;
@@ -22,6 +24,7 @@ public class ColorLightGameGameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panneauSR = panneauFin.GetComponent<CanvasGroup>();
         end = false;
         score = 0;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -36,8 +39,34 @@ public class ColorLightGameGameScript : MonoBehaviour
 
         if (currentTime > 60 && !end) 
         {
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    textFinalScore.text = "" + (1000 * (score / 5));
+                }
+                else if (difficulty == "medium")
+                {
+                    textFinalScore.text = "" + (2000 * (score / 15));
+                }
+                else if (difficulty == "hard")
+                {
+                    textFinalScore.text = "" + (4000 * (score / 30));
+                }
+                else if (difficulty == "hardcore")
+                {
+                    textFinalScore.text = "" + (10000 * (score / 55));
+                }
+            }
+            else
+            {
+                textFinalScore.text = "" + (1000 * (score / 5));
+            }
             end = true;
-            Instantiate(panneauFin);
+            panneauSR.alpha = 1;
+            panneauSR.blocksRaycasts = true;
+            textFinalScore.enabled = true;
         }
         else if (!end) 
         {
@@ -77,6 +106,7 @@ public class ColorLightGameGameScript : MonoBehaviour
                     }
                 }
                 saveSerial.atWhichGameAreWe++;
+                saveSerial.lastScore += int.Parse(textFinalScore.text);
                 saveSerial.SaveData();
                 if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count)
                 {
@@ -84,6 +114,12 @@ public class ColorLightGameGameScript : MonoBehaviour
                 }
                 else
                 {
+                    if (saveSerial.lastScore > saveSerial.bestScore)
+                    {
+                        saveSerial.bestScore = saveSerial.lastScore;
+                    }
+                    saveSerial.isScoreCheckerOpen = true;
+                    saveSerial.SaveData();
                     SceneManager.LoadScene("MenuChallenge");
                 }
             }

@@ -30,6 +30,71 @@ public class Timer : MonoBehaviour
 
         if (currentTime > 60 && !gameOver)
         {
+            if (saveSerial.isItChallengeMode)
+            {
+                var difficulty = saveSerial.difficulty;
+                if (difficulty == "easy")
+                {
+                    if (getVolume != null)
+                    {
+                        if (getVolume.score > 4)
+                        {
+                            getVolume.textFinalScore.text = "" + (1000 * (getVolume.score / 5));
+                        }
+                    }
+                    else
+                    {
+                        if (objets.score > 1)
+                        {
+                            objets.textFinalScore.text = "" + (1000 * (objets.score / 2));
+                        }
+                    }
+                }
+                else if (difficulty == "medium")
+                {
+                    if (getVolume != null)
+                    {
+                        getVolume.textFinalScore.text = "" + (2000 * (getVolume.score / 15));
+                    }
+                    else
+                    {
+                        objets.textFinalScore.text = "" + (2000 * (objets.score / 4));
+                    }
+                }
+                else if (difficulty == "hard")
+                {
+                    if (getVolume != null)
+                    {
+                        getVolume.textFinalScore.text = "" + (4000 * (getVolume.score / 30));
+                    }
+                    else
+                    {
+                        objets.textFinalScore.text = "" + (4000 * (objets.score / 7));
+                    }
+                }
+                else if (difficulty == "hardcore")
+                {
+                    if (getVolume != null)
+                    {
+                        getVolume.textFinalScore.text = "" + (10000 * (getVolume.score / 50));
+                    }
+                    else
+                    {
+                        objets.textFinalScore.text = "" + (10000 * (objets.score / 10));
+                    }
+                }
+            }
+            else
+            {
+                if (getVolume != null)
+                {
+                    getVolume.textFinalScore.text = "" + (1000 * (getVolume.score / 4));
+                }
+                else
+                {
+                    objets.textFinalScore.text = "" + (1000 * (objets.score / 4));
+                }
+            }
             gameOver = true;
             panneauSR.alpha = 1;
             panneauSR.blocksRaycasts = true;
@@ -114,6 +179,15 @@ public class Timer : MonoBehaviour
                     }
                 }
 
+                if (getVolume != null)
+                {
+                    saveSerial.lastScore += int.Parse(getVolume.textFinalScore.text);
+                }
+                else
+                {
+                    saveSerial.lastScore += int.Parse(objets.textFinalScore.text);
+                }
+
                 saveSerial.atWhichGameAreWe++;
                 saveSerial.SaveData();
                 if (saveSerial.atWhichGameAreWe != saveSerial.orderListMiniGame.Count) 
@@ -121,7 +195,13 @@ public class Timer : MonoBehaviour
                     SceneManager.LoadScene(saveSerial.orderListMiniGame[saveSerial.atWhichGameAreWe]);
                 }
                 else 
-                { 
+                {
+                    if (saveSerial.lastScore > saveSerial.bestScore)
+                    {
+                        saveSerial.bestScore = saveSerial.lastScore;
+                    }
+                    saveSerial.isScoreCheckerOpen = true;
+                    saveSerial.SaveData();
                     SceneManager.LoadScene("MenuChallenge");
                 }
             }
@@ -129,7 +209,7 @@ public class Timer : MonoBehaviour
             {
                 if (getVolume != null)
                 {
-                    if (getVolume.score > 15)
+                    if (getVolume.score > 4)
                     {
                         saveSerial.isGame3Unlocked = true;
                     }
